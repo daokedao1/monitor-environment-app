@@ -2,7 +2,7 @@
 	import './global.css'
 	export default {
 		onLaunch: function() {
-			console.log('App Launch')
+			console.log('App La1unch')
 		},
 		onShow: function() {
 			console.log('App Show')

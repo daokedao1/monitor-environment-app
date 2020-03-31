@@ -92,7 +92,7 @@
 		methods: {
 			addDevice(){
 				uni.navigateTo({
-					url: '../AddDevice/index'
+					url: '/pages/sensor/sensor'
 				});
 			}
 			

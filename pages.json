@@ -74,15 +74,10 @@
 			"selectedIconPath":"static/icon1b.png",
 			"text":"首页"
 		},{
-			"pagePath":"pages/find/find",
+			"pagePath":"pages/AddDevice/index",
 			"iconPath":"static/icon2.png",
 			"selectedIconPath":"static/icon2b.png",
 			"text":"设备"
-		},{
-			"pagePath":"pages/order/order",
-			"iconPath":"static/icon3.png",
-			"selectedIconPath":"static/icon3b.png",
-			"text":"报表"
 		},{
 			"pagePath":"pages/user/user",
 			"iconPath":"static/icon4.png",

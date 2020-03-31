@@ -1,0 +1,103 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarBackgroundColor":"#1de1d3",
+				"navigationBarTextStyle":"white",
+				"navigationBarTitleText":"首页"
+			}
+		},
+		{
+			"path": "pages/sensor/sensor",
+			"style": {
+				"navigationBarBackgroundColor":"#557cc3",
+				"navigationBarTextStyle":"white",
+				"navigationBarTitleText":"传感器"
+			}
+		},
+		{
+			"path": "pages/AddDevice/index",
+			"style": {
+				"navigationBarBackgroundColor":"#1de1d3",
+				"navigationBarTextStyle":"white",
+				"navigationBarTitleText":"添加设备"
+			}
+		},
+		{
+			"path": "pages/find/find",
+			"style": {
+				"navigationBarBackgroundColor":"#f39800",
+				"navigationBarTextStyle":"white",
+				"navigationBarTitleText":"发现"
+			}
+		},{
+			"path": "pages/order/order",
+			"style": {
+				"navigationBarBackgroundColor":"#f39800",
+				"navigationBarTextStyle":"white",
+				"navigationBarTitleText":"订单"
+			}
+		},
+		{
+			"path": "pages/user/user",
+			"style": {
+				"navigationBarBackgroundColor":"#f39800",
+				"navigationBarTextStyle":"white",
+				"navigationBarTitleText":"我的"
+			}
+		}
+		
+        ,{
+            "path" : "components/chart/bar/bar",
+            "style" : {}
+        }
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "",
+		"navigationBarBackgroundColor": "#f39800",
+		"backgroundColor": "#f39800"
+	},
+	"tabBar":{
+		"color":"#818181",
+		"selectedColor":"#00c171",
+		"height":"50px",
+		"fontSize":"12px",
+		"iconWidth":"15px",
+		"spacing":"4px",
+		"backgroundColor":"#fff",
+		"borderStyle":"black",
+		"list":[{
+			"pagePath":"pages/index/index",
+			"iconPath":"static/icon1.png",
+			"selectedIconPath":"static/icon1b.png",
+			"text":"首页"
+		},{
+			"pagePath":"pages/find/find",
+			"iconPath":"static/icon2.png",
+			"selectedIconPath":"static/icon2b.png",
+			"text":"设备"
+		},{
+			"pagePath":"pages/order/order",
+			"iconPath":"static/icon3.png",
+			"selectedIconPath":"static/icon3b.png",
+			"text":"报表"
+		},{
+			"pagePath":"pages/user/user",
+			"iconPath":"static/icon4.png",
+			"selectedIconPath":"static/icon4b.png",
+			"text":"我的"
+		}]
+	},
+	"condition" : { //模式配置，仅开发期间生效
+		"current": 0, //当前激活的模式(list 的索引项)
+		"list": [
+			{
+				"name": "首页", //模式名称
+				"path": "pages/index/index", //启动页面，必选
+				"query": "" //启动参数，在页面的onLoad函数里面得到
+			}
+		]
+	}
+}

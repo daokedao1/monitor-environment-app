@@ -27,14 +27,14 @@
 		{
 			"path": "pages/find/find",
 			"style": {
-				"navigationBarBackgroundColor":"#f39800",
+				"navigationBarBackgroundColor":"#1de1d3",
 				"navigationBarTextStyle":"white",
 				"navigationBarTitleText":"发现"
 			}
 		},{
 			"path": "pages/order/order",
 			"style": {
-				"navigationBarBackgroundColor":"#f39800",
+				"navigationBarBackgroundColor":"#1de1d3",
 				"navigationBarTextStyle":"white",
 				"navigationBarTitleText":"订单"
 			}
@@ -42,7 +42,7 @@
 		{
 			"path": "pages/user/user",
 			"style": {
-				"navigationBarBackgroundColor":"#f39800",
+				"navigationBarBackgroundColor":"#1de1d3",
 				"navigationBarTextStyle":"white",
 				"navigationBarTitleText":"我的"
 			}
@@ -56,8 +56,8 @@
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "",
-		"navigationBarBackgroundColor": "#f39800",
-		"backgroundColor": "#f39800"
+		"navigationBarBackgroundColor": "#1de1d3",
+		"backgroundColor": "#1de1d3"
 	},
 	"tabBar":{
 		"color":"#818181",

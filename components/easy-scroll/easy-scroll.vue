@@ -5,7 +5,7 @@
                 v-for="(item,index) of list" 
                 :class="{active:index==viewNavIndex}"
                 @click="handleClickNav(index)"
-                :key="index">厂区{{index}}</view>
+                :key="index">{{item.a}}</view>
         </view>
         <view class="list-wrapper">
             <scroll-view class="list-container" id="list-container"
@@ -20,7 +20,7 @@
                     <view class="item-container">
                         <view 				@click="device" class="item" v-for="(item,index) of [1,2,3,4,5]" :key="index">
                             <image src="../../static/logo1.jpg" mode=""></image>
-                            <view class="name">设备{{listIndex}}-{{index}}</view>
+                            <view class="name">设备{{item.b}}-{{index}}</view>
                         </view>
                     </view>
                 </view>
@@ -36,13 +36,41 @@ export default {
 	},
     data() {
         return {
-            list: Array(9).fill(1),//列表数据
+            list: [
+				{
+					a:1,
+					b:[
+						2,3,4,5
+					]
+				},
+				{
+					a:1,
+					b:[
+						2,3,4,5
+					]
+				},
+				{
+					a:1,
+					b:[
+						2,3,4,5
+					]
+				},
+				{
+					a:1,
+					b:[
+						2,3,4,5
+					]
+				},
+			],//列表数据
             isTouchScrollView: false,
             clickedNavIndex: 0,
             viewNavIndex: 0,
             nodeInfoList: [],
         }
     },
+	mounted() {
+		console.log(this.list)
+	},
     methods:{
         init(){
             const query = uni.createSelectorQuery().in(this);

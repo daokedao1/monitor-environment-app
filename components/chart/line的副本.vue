@@ -1,15 +1,15 @@
 <template>
 	<view class="qiun-columns">
-<uni-countdown  :show-day="false" @timeup="getServerData" :second="stateNum"></uni-countdown>
+
 		<view class="qiun-charts" >
 			<!--#ifdef MP-ALIPAY -->
-			<canvas canvas-id="canvasLineA" id="canvasLineA" class="charts" :width="cWidth*pixelRatio" :height="cHeight*pixelRatio" :style="{'width':cWidth+'px','height':cHeight+'px'}" disable-scroll=true @touchstart="touchLineA" @touchmove="moveLineA" @touchend="touchEndLineA"></canvas>
+			<canvas canvas-id="canvasLineA" id="canvasLineA" class="charts" :width="cWidth*pixelRatio" :height="cHeight*pixelRatio" :style="{'width':cWidth+'px','height':cHeight+'px'}" @touchstart="touchLineA"></canvas>
 			<!--#endif-->
 			<!--#ifndef MP-ALIPAY -->
-			<!-- <canvas canvas-id="canvasLineA" id="canvasLineA" class="charts" disable-scroll=true @touchstart="touchLineA" @touchmove="moveLineA" @touchend="touchEndLineA"></canvas> -->
+			<!-- <canvas canvas-id="canvasLineA" id="canvasLineA" class="charts" @touchstart="touchLineA"></canvas> -->
 			<!--#endif-->
 		</view>
-
+		<!-- <button class="qiun-button" @tap="changeData()">更新图表</button> -->
 		<!--#endif-->
 	</view>
 </template>
@@ -17,28 +17,16 @@
 <script>
 	import uCharts from '@/components/u-charts/u-charts.js';
 	import  { isJSON } from '@/common/checker.js';
-	import uniCountdown from '@/components/uni-countdown/uni-countdown.vue'
+	
 	var _self;
 	var canvaLineA=null;
-   
 	export default {
-		props: {
-			dataAll: {
-				type: Object,
-			},
-			endDate: {
-				type: String,
-			},
-
-		},
 		data() {
 			return {
 				cWidth:'',
 				cHeight:'',
 				pixelRatio:1,
 				textarea:'',
-				state:true,
-				stateNum:10,
 				"LineA": {
 								  "categories": ["2012", "2013", "2014", "2015", "2016", "2017"],
 								  "series": [{
@@ -54,7 +42,6 @@
 								},
 			}
 		},
-		components: {uniCountdown},
 		mounted() {
 			_self = this;
 			//#ifdef MP-ALIPAY
@@ -70,42 +57,28 @@
 			//#endif
 			this.cWidth=uni.upx2px(750);
 			this.cHeight=uni.upx2px(500);
-			this.getServerData(true);
-			// const timer=setInterval(()=>{
-			// 	clearInterval(timer)
-			// 	this.getServerData();
-			// },10000)
-		},
-		watch:{
-			dataAll:{
-				     handler(v){
-				                  this.getServerData()  
-									console.log(123)
-				           },
-				deep:true
-			}
+			this.getServerData();
 		},
 		methods: {
-		async	getServerData(state){
-				
-					let list=await this.$api.moniterList(this.dataAll);
-					let LineA=this.handleWay(list.message.data)
-					console.log(LineA)
-					// //这里我后台返123回的是数组，所以用等于，如果您后台返回的是单条数据，需要push进去
-					// LineA.categories=this.LineA.categories;
-					// LineA.series=this.LineA.series;
-					// _self.textarea = JSON.stringify(this.LineA);
-					console.log(LineA)
-					_self.showLineA("canvasLineA",LineA);
+		async	getServerData(){
 			
+				let list=await this.$api.moniterList();
+				let LineA=this.handleWay(list.message.data)
+				console.log(LineA)
+				// //这里我后台返123回的是数组，所以用等于，如果您后台返回的是单条数据，需要push进去
+				// LineA.categories=this.LineA.categories;
+				// LineA.series=this.LineA.series;
+				// _self.textarea = JSON.stringify(this.LineA);
+				console.log(LineA)
+				_self.showLineA("canvasLineA",LineA);
 			},
 			handleWay(data){
 				console.log(data)
-				let LineA={categories:[],series:[{name:'温度（℃）',data:[]},{name:"湿度（%）",data:[]}]};
+				let LineA={categories:[],series:[{name:'温度',data:[]},{name:"湿度",data:[]}]};
 				for(let v of data){
 					LineA.categories.push(v.date);
 					LineA.series[0].data.push(v.wendu)
-					LineA.series[1].data.push(v.shidu*100)
+					LineA.series[1].data.push(v.shidu)
 				}
 				return LineA
 			},
@@ -115,57 +88,53 @@
 					canvasId: canvasId,
 					type: 'line',
 					fontSize:11,
-					padding:[15,15,0,15],
+					padding:[15,43,0,39],
 					legend:{
 						show:true,
 						padding:5,
 						lineHeight:11,
-						margin:5,
+						margin:0,
 					},
+					
+					enableScroll:true,
 					dataLabel:true,
 					dataPointShape:true,
-					dataPointShapeType:'hollow',
 					background:'#FFFFFF',
 					pixelRatio:_self.pixelRatio,
 					categories: chartData.categories,
 					series: chartData.series,
 					animation: true,
-					enableScroll: true,//开启图表拖拽功能
 					xAxis: {
-						disableGrid:false,
 						type:'grid',
-						gridType:'dash',
-						itemCount:2,
 						scrollShow:true,
-						scrollAlign:'left'
+						labelCount:3,
+						gridColor:'#CCCCCC',
+						gridType:'dash',
+						dashLength:8,
+						enableScroll:true,
+						itemCount:3,
+            boundaryGap:'justify',
+			format:(val)=>{return val.slice(2,7)}
 					},
 					yAxis: {
-						//disabled:true
 						gridType:'dash',
-						splitNumber:8,
-						// min:10,
-						// max:180,
-						format:(val)=>{return val.toFixed(0)+'℃'}//如不写此方法，Y轴刻度默认保留两位小数
+						gridColor:'#CCCCCC',
+						rotateLabel:true,
+						dashLength:8,
+						splitNumber:5,
 					},
 					width: _self.cWidth*_self.pixelRatio,
 					height: _self.cHeight*_self.pixelRatio,
 					extra: {
 						line:{
-							type: 'straight'
+							type: 'curve'
 						}
-					},
+					}
 				});
 				
 			},
-			touchLineA(e){
-				canvaLineA.scrollStart(e);
-			},
-			moveLineA(e) {
-				canvaLineA.scroll(e);
-			},
-			touchEndLineA(e) {
-				canvaLineA.scrollEnd(e);
-				//下面是toolTip事件，如果滚动后不需要显示，可不填写
+			touchLineA(e) {
+				console.log(123)
 				canvaLineA.touchLegend(e);
 				canvaLineA.showToolTip(e, {
 					format: function (item, category) {
@@ -178,9 +147,7 @@
 					let newdata=JSON.parse(_self.textarea);
 					canvaLineA.updateData({
 						series: newdata.series,
-						categories: newdata.categories,
-						scrollPosition:'right',
-						animation:false
+						categories: newdata.categories
 					});
 				}else{
 					uni.showToast({
@@ -196,13 +163,14 @@
 <style>
 	/*样式的width和height一定要与定义的cWidth和cHeight相对应*/
 	.qiun-charts {
-		width: 750upx;
+		width: 100%;
 		height: 500upx;
 		background-color: #FFFFFF;
 	}
 	
 	.charts {
 		width: 750upx;
+		
 		height: 500upx;
 		background-color: #FFFFFF;
 	}

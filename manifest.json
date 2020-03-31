@@ -64,6 +64,19 @@
         },
         "usingComponents" : true
     },
+	 "h5": {
+	        "devServer": {
+	            "port": 8010,
+	            "disableHostCheck": true,
+	            "proxy": {
+	                "/api": {
+	                    "target": "http://39.98.215.185:8010/",
+	                    "changeOrigin": true,
+	                    "secure": false
+	                }
+	            }
+	        }
+	    },
     "mp-alipay" : {
         "usingComponents" : true
     },

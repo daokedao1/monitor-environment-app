@@ -5,7 +5,7 @@
                 v-for="(item,index) of list" 
                 :class="{active:index==viewNavIndex}"
                 @click="handleClickNav(index)"
-                :key="index">{{item.a}}</view>
+                :key="index">{{item.name}}</view>
         </view>
         <view class="list-wrapper">
             <scroll-view class="list-container" id="list-container"
@@ -18,9 +18,9 @@
                 <view class="list" v-for="(item,listIndex) of list" :key="listIndex" :id="'scroll-item-'+listIndex">
                     <view class="title"><text>传感器{{listIndex}}</text></view>
                     <view class="item-container">
-                        <view 				@click="device" class="item" v-for="(item,index) of [1,2,3,4,5]" :key="index">
+                        <view 				@click="device" class="item" v-for="(item,index) of item.children" :key="index">
                             <image src="../../static/logo1.jpg" mode=""></image>
-                            <view class="name">设备{{item.b}}-{{index}}</view>
+                            <view class="name">{{item.name}}-{{item.value}}</view>
                         </view>
                     </view>
                 </view>
@@ -37,30 +37,6 @@ export default {
     data() {
         return {
             list: [
-				{
-					a:1,
-					b:[
-						2,3,4,5
-					]
-				},
-				{
-					a:1,
-					b:[
-						2,3,4,5
-					]
-				},
-				{
-					a:1,
-					b:[
-						2,3,4,5
-					]
-				},
-				{
-					a:1,
-					b:[
-						2,3,4,5
-					]
-				},
 			],//列表数据
             isTouchScrollView: false,
             clickedNavIndex: 0,
@@ -70,14 +46,18 @@ export default {
     },
 	mounted() {
 		console.log(this.list)
+		this.init()
 	},
     methods:{
-        init(){
-            const query = uni.createSelectorQuery().in(this);
-            query.selectAll('#list-container .list').boundingClientRect(data => {
-                // console.log(data);
-                this.nodeInfoList = data
-            }).exec()
+       async init(){
+			const res=await this.$api.addEquipment();
+			this.list=res.message;
+			// http://39.98.215.185:8010/api/equipment/list
+            // const query = uni.createSelectorQuery().in(this);
+            // query.selectAll('#list-container .list').boundingClientRect(data => {
+            //     // console.log(data);
+            //     this.nodeInfoList = data
+            // }).exec()
         },
         handleClickNav(nav){
             if(!this.isTouchScrollView&&this.clickedNavIndex == nav) return;

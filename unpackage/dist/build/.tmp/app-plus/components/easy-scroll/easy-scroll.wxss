@@ -1,0 +1,90 @@
+.container.data-v-bb83a7be {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  height: calc(100vh - var(--window-top));
+}
+.container .nav-list.data-v-bb83a7be {
+  width: 160rpx;
+  border-right: 2rpx solid #efefef;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  font-size: 34rpx;
+}
+.container .nav-list.data-v-bb83a7be::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  background: transparent;
+}
+.container .nav-list .nav-item.data-v-bb83a7be {
+  width: 100%;
+  padding: 25rpx 0;
+  text-align: center;
+  -webkit-transition: -webkit-transform 0.1s linear;
+  transition: -webkit-transform 0.1s linear;
+  transition: transform 0.1s linear;
+  transition: transform 0.1s linear, -webkit-transform 0.1s linear;
+}
+.container .nav-list .nav-item.active.data-v-bb83a7be {
+  color: #fb7d34;
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  -webkit-transform: scale(1.32);
+          transform: scale(1.32);
+}
+.container .list-wrapper.data-v-bb83a7be {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+  position: relative;
+}
+.container .list-wrapper .list-container.data-v-bb83a7be {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0 32rpx;
+  box-sizing: border-box;
+}
+.container .list-wrapper .list-container .title.data-v-bb83a7be {
+  height: 132rpx;
+  line-height: 132rpx;
+  text-align: center;
+}
+.container .list-wrapper .list-container .item-container.data-v-bb83a7be {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.container .list-wrapper .list-container .item-container .item.data-v-bb83a7be {
+  width: 33.33%;
+  text-align: center;
+  padding-top: 21rpx;
+  padding-bottom: 31rpx;
+}
+.container .list-wrapper .list-container .item-container .item image.data-v-bb83a7be {
+  width: 104rpx;
+  height: 104rpx;
+  margin-bottom: 28rpx;
+}
+.container .list-wrapper .list-container .item-container .item .name.data-v-bb83a7be {
+  font-size: 23rpx;
+  color: rgba(0,0,0,0.541);
+}
+

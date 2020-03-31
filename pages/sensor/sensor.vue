@@ -17,21 +17,46 @@
 				
 			</view>
 		</view>
+		<view class="times">
+			<view class="times_s">
+				<text>开始时间：</text>
+				<ruiDatePicker
+				    fields="second"
+					 start="2010-00-00 00:00:00"
+					    end="2030-12-30 23:59:59"
+					:value="value"
+				    @change="bindChange1"
+				    @cancel="bindCancel"
+				></ruiDatePicker>
+			</view>
+			<view class="times_s">
+				<text>结束时间：</text>
+				<ruiDatePicker
+					fields="second"
+					:value="value"
+					@change="bindChange2"
+					@cancel="bindCancel"
+				></ruiDatePicker>
+			</view>
+		</view>
 		<view class="allChart">
+			
 			    <view class="lineA">
-			        <uni-segmented-control :current="current" :values="items" @clickItem="onClickItem" style-type="button" style="width: 80%;margin-bottom: 30upx;" active-color="#2b61ea"></uni-segmented-control>
+					
+			
+						<uni-segmented-control  :current="current" :values="items" @clickItem="onClickItem" style-type="button" style="width: 80%;margin-bottom: 30upx;" active-color="#2b61ea"></uni-segmented-control>
 			        <view >
 			            <view v-if="current === 0">
-			                <lineChart></lineChart>
-							<barChart ></barChart>
+			                <lineChart :dataAll='dataAll' :endDate="endDate"></lineChart>
+							<!-- <barChart ></barChart> -->
 			            </view>
 			            <view v-if="current === 1">
 			                <lineChart></lineChart>
-							<barChart ></barChart>
+							<!-- <barChart ></barChart> -->
 			            </view>
 			            <view v-if="current === 2">
-			                <lineChart></lineChart>
-							<barChart ></barChart>
+			                <lineChart ></lineChart>
+							<!-- <barChart ></barChart> -->
 			            </view>
 			        </view>
 			    </view>
@@ -44,23 +69,38 @@
 	import lineChart from '../../components/chart/line.vue'
 	import barChart from '../../components/chart/bar/bar.vue'
 	import uniSegmentedControl from "@/components/uni-segmented-control/uni-segmented-control.vue"
+	import ruiDatePicker from '@/components/rattenking-dtpicker/rattenking-dtpicker.vue';
 	export default {
 		data() {
 			return {
 				   items: ['分钟','小时','天'],
-				            current: 0
+				            current: 0,
+						 dataAll:{startDate:'',endDate:''}
 			};
+		},
+		mounted() {
+			this.init()
 		},
 		    methods: {
 		        onClickItem(e,index) {
 		            if (this.current !== e.currentIndex) {
 		                this.current = e.currentIndex;
 		            }
-		        }
+		        },
+				bindChange1(v){
+					this.dataAll.startDate=v
+				},
+				bindChange2(v){
+					this.dataAll.endDate=v
+				},
+			async init(){
+					
+				}
 		},
 		components: {
 			lineChart,uniSegmentedControl,
-			barChart
+			barChart,
+			ruiDatePicker
 		},
 	}
 </script>
@@ -94,6 +134,20 @@
 					font-size: 80upx;
 				}
 			}
+		}
+	}
+	.times{
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: space-between;
+		align-items: center;
+		margin-top: 13upx;
+		.times_s{
+			display: flex;
+			margin-top: 13upx;
+			flex-flow: row nowrap;
+			justify-content: center;
+			align-items: center;
 		}
 	}
 	.allChart{

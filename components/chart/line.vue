@@ -93,6 +93,7 @@
 			},
 
 			showLineA(canvasId,chartData){
+				console.log(chartData)
 				canvaLineA=new uCharts({
 					$this:_self,
 					canvasId: canvasId,
@@ -120,18 +121,40 @@
 						gridType:'dash',
 						itemCount:9,
 						rotateLabel:false,
-						labelCount:3,
+						labelCount:2,
 						// scrollBackgroundColor:'red',
 						scrollAlign:"right",
 						scrollShow:true,
 					},
 					yAxis: {
+						data:[
+							{
+								position:"left",
+								gridType:'dash',
+								splitNumber:8,
+								min:0,
+								format:(val,a)=>{
+									console.log(val,a)
+									return val.toFixed(0)+'℃'
+									}//如不写此方法，Y轴刻度默认保留两位小数
+							},
+							{
+								position:"right",
+								gridType:'dash',
+								min:0,
+								max:100,
+								splitNumber:8,
+								format:(val,a)=>{
+									console.log(val,a)
+									return (val).toFixed(0)+'%'
+								}//如不写此方法，Y轴刻度默认保留两位小数
+							}
+						],
 						//disabled:true
-						gridType:'dash',
-						splitNumber:8,
+						
+					
 						// min:10,
 						// max:180,
-						format:(val)=>{return val.toFixed(0)+'℃'}//如不写此方法，Y轴刻度默认保留两位小数
 					},
 					width: _self.cWidth*_self.pixelRatio,
 					height: _self.cHeight*_self.pixelRatio,

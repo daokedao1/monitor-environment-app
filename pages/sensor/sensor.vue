@@ -100,7 +100,7 @@
 		},
 		    methods: {
 				handleWay(data){
-					let LineA={categories:[],series:[{name:'温度（℃）',data:[]},{name:"湿度（%）",data:[]}]};
+					let LineA={categories:[],series:[{name:'温度（℃）',data:[],index:0},{name:"湿度（%）",data:[],index:1}]};
 					for(let v of data){
 						let wendu=Number(v.wendu);
 						let shidu=Number(v.shidu*100).toFixed(2);

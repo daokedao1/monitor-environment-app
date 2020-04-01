@@ -1,0 +1,22 @@
+{
+  "name": "monitor-environment-app",
+  "version": "1.0.0",
+  "description": "智能环境监控app",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daokedao1/monitor-environment-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/daokedao1/monitor-environment-app/issues"
+  },
+  "homepage": "https://github.com/daokedao1/monitor-environment-app#readme",
+  "dependencies": {
+    "moment": "^2.24.0"
+  }
+}

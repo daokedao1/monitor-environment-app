@@ -27,7 +27,10 @@
 		<view class="listmr">
 			<view class="col3 f30 elip mb15 list_t">
 			<text style="font-weight: bold;">{{v.name}}</text>
-			<text class="state1">{{v.state1}}</text>
+			<text class="state1">
+			<!-- {{v.state1}} -->
+			在线
+			</text>
 			</view>
 			<view class="list_b">
 				<view class="list_b_t">
@@ -61,35 +64,49 @@
 		data() {
 			return {
 				list: [
-					{
-						name:"厂区1",
-						state1:"在线",
-						temperature:'40',
-						humidity:'50',
-						state2:"正常"
-					},
-					{
-						name:"厂区2",
-						state1:"在线",
-						temperature:'40',
-						humidity:'50',
-						state2:"正常"
-					},
-					{
-						name:"厂区3",
-						state1:"在线",
-						temperature:'40',
-						humidity:'50',
-						state2:"正常"
-					},
+					// {
+					// 	name:"厂区1",
+					// 	state1:"在线",
+					// 	temperature:'40',
+					// 	humidity:'50',
+					// 	state2:"正常"
+					// },
+					// {
+					// 	name:"厂区2",
+					// 	state1:"在线",
+					// 	temperature:'40',
+					// 	humidity:'50',
+					// 	state2:"正常"
+					// },
+					// {
+					// 	name:"厂区3",
+					// 	state1:"在线",
+					// 	temperature:'40',
+					// 	humidity:'50',
+					// 	state2:"正常"
+					// },
 				]
 				
 			}
 		},
-		onLoad() {
-
+		mounted() {
+			this.init();
 		},
+
 		methods: {
+			async init(){
+				let [res,res1]=await Promise.all([
+					this.$api.moniterList({startDate:this.$moment().subtract(10, 'm').format("YYYY-MM-DD HH:mm:ss"),endDate:this.$moment().format("YYYY-MM-DD HH:mm:ss")}),
+					this.$api.addEquipment()
+				]);
+					let obj=res.message.data[res.message.data.length-1]
+					console.log(res)
+					this.list=res1.message;
+					let wendu=Number(obj.wendu);
+					let shidu=obj.shidu*100;
+					this.list[0].temperature=wendu.toFixed(1);
+					this.list[0].humidity=shidu.toFixed(1);
+			 },
 			addDevice(){
 				uni.navigateTo({
 					url: '/pages/sensor/sensor'
@@ -132,7 +149,7 @@
 	flex-flow: row wrap;
 	justify-content: space-between;
 	}
-	.listm{background: #fff; border-radius: 15upx; box-shadow: 0 0 10px rgba(0,0,0,0.3); margin-bottom: 20upx;padding: 30upx;width: 39%;}
+	.listm{background: #fff; border-radius: 15upx; box-shadow: 0 0 10px rgba(0,0,0,0.3); margin-bottom: 20upx;padding: 30upx;width: 42%;}
 	.listmpic{border-radius: 10upx;width: 166upx;}
 	.listmr{width: 460upx; display: inline-block;}
 	.list_t{
@@ -156,6 +173,7 @@
 			height: 90upx;
 			display: flex;
 			flex-flow: column;
+			text-align: center;
 			justify-content: space-between;
 		}
 		    

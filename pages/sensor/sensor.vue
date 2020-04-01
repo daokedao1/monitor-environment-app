@@ -103,8 +103,9 @@
 					let LineA={categories:[],series:[{name:'温度（℃）',data:[]},{name:"湿度（%）",data:[]}]};
 					for(let v of data){
 						let wendu=Number(v.wendu);
-						let shidu=Number(v.shidu*100).toFixed(2)
-						LineA.categories.push(v.date);
+						let shidu=Number(v.shidu*100).toFixed(2);
+						let date=v.date.slice(10,v.date.length)
+						LineA.categories.push(date);
 						LineA.series[0].data.push(wendu.toFixed(2));
 						LineA.series[1].data.push(shidu);
 					}

@@ -82,13 +82,15 @@
 				
 				   items: ['实时数据','历史数据'],
 				            current: 0,
-						 dataAll:{startDate:'2019-01-01 00:00:00',endDate:this.$moment().format("YYYY-MM-DD HH:mm:ss")}
+						 dataAll:{id:1,startDate:'2019-01-01 00:00:00',endDate:this.$moment().format("YYYY-MM-DD HH:mm:ss")}
 			};
 		},
 		mounted() {
 			this.init()
 		},
-		
+		onLoad: function (option) { //option为object类型，会序列化上个页面传递的参数
+		   this.dataAll.id=option.id; //打印出上个页面传递的参数。
+		},
 		watch:{
 			current(v){
 				if(v){
@@ -129,7 +131,7 @@
 				},
 
 			async realTime(){
-					let list=await this.$api.moniterList({startDate:this.$moment().subtract(6, 's').format("YYYY-MM-DD HH:mm:ss"),endDate:this.$moment().format("YYYY-MM-DD HH:mm:ss")});
+					let list=await this.$api.moniterList({id:this.dataAll.id,startDate:this.$moment().subtract(6, 's').format("YYYY-MM-DD HH:mm:ss"),endDate:this.$moment().format("YYYY-MM-DD HH:mm:ss")});
 					if(list.message.data.length>0){
 						this.currentData=list.message.data[list.message.data.length-1];
 						let newArr=this.initArr.concat(list.message.data)
@@ -138,14 +140,14 @@
 					}
 				},
 				async history(){
-						let list=await this.$api.historyList({startDate:this.dataAll.startDate,endDate:this.dataAll.endDate});
+						let list=await this.$api.historyList({id:this.dataAll.id,startDate:this.dataAll.startDate,endDate:this.dataAll.endDate});
 						let LineA=this.handleWay(list.message.data);
 						this.XYdata1=LineA;
 					},
 				
 			async init(){
 					let [list,res]=await Promise.all([
-						this.$api.moniterList({startDate:this.$moment().subtract(10, 'm').format("YYYY-MM-DD HH:mm:ss"),endDate:this.$moment().format("YYYY-MM-DD HH:mm:ss")})
+						this.$api.moniterList({id:this.dataAll.id,startDate:this.$moment().subtract(10, 'm').format("YYYY-MM-DD HH:mm:ss"),endDate:this.$moment().format("YYYY-MM-DD HH:mm:ss")})
 					]);
 					this.initArr=this.util.clone(list.message.data);
 					this.currentData=list.message.data[list.message.data.length-1];

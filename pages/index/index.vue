@@ -23,7 +23,7 @@
  </view><!--header end-->
  <view class="list">
 
-	<view @click="addDevice" v-for="(v,i) in list" :key="i" class="listm flex flex-between">
+	<view @click="addDevice(v)" v-for="(v,i) in list" :key="i" class="listm flex flex-between">
 		<view class="listmr">
 			<view class="col3 f30 elip mb15 list_t">
 			<text style="font-weight: bold;">{{v.name}}</text>
@@ -95,21 +95,28 @@
 
 		methods: {
 			async init(){
-				let [res,res1]=await Promise.all([
-					this.$api.moniterList({startDate:this.$moment().subtract(10, 'm').format("YYYY-MM-DD HH:mm:ss"),endDate:this.$moment().format("YYYY-MM-DD HH:mm:ss")}),
+				let [res,res1,res2]=await Promise.all([
+					this.$api.moniterList({id:1,startDate:this.$moment().subtract(10, 'm').format("YYYY-MM-DD HH:mm:ss"),endDate:this.$moment().format("YYYY-MM-DD HH:mm:ss")}),
+					this.$api.moniterList({id:2,startDate:this.$moment().subtract(10, 'm').format("YYYY-MM-DD HH:mm:ss"),endDate:this.$moment().format("YYYY-MM-DD HH:mm:ss")}),
 					this.$api.addEquipment()
 				]);
-					let obj=res.message.data[res.message.data.length-1]
-					console.log(res)
-					this.list=res1.message;
+					let obj=res.message.data[res.message.data.length-1];
+					let obj1=res1.message.data[res1.message.data.length-1];
+					this.list=res2.message[0].children;
+					//0
 					let wendu=Number(obj.wendu);
 					let shidu=obj.shidu*100;
 					this.list[0].temperature=wendu.toFixed(1);
 					this.list[0].humidity=shidu.toFixed(1);
+					//1
+					let wendu1=Number(obj1.wendu);
+					let shidu1=obj1.shidu*100;
+					this.list[1].temperature=wendu1.toFixed(1);
+					this.list[1].humidity=shidu1.toFixed(1);
 			 },
-			addDevice(){
+			addDevice(v){
 				uni.navigateTo({
-					url: '/pages/sensor/sensor'
+					url: '/pages/sensor/sensor'+"?id="+v.value
 				});
 			}
 			
@@ -149,7 +156,7 @@
 	flex-flow: row wrap;
 	justify-content: space-between;
 	}
-	.listm{background: #fff; border-radius: 15upx; box-shadow: 0 0 10px rgba(0,0,0,0.3); margin-bottom: 20upx;padding: 30upx;width: 42%;}
+	.listm{background: #fff; border-radius: 15upx; box-shadow: 0 0 10px rgba(0,0,0,0.3); margin-bottom: 20upx;padding: 30upx;width: 40%;}
 	.listmpic{border-radius: 10upx;width: 166upx;}
 	.listmr{width: 460upx; display: inline-block;}
 	.list_t{

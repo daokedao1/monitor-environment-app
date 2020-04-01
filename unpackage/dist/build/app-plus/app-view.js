@@ -1077,11 +1077,14 @@ __WXML_GLOBAL__.ops_cached.$gwx_2=[];
 Z([3,'qiun-columns'])
 Z([3,'qiun-charts'])
 Z([3,'__e'])
+Z(z[2])
+Z(z[2])
 Z([3,'canvasLineA'])
 Z([3,'charts'])
-Z([[4],[[5],[[4],[[5],[[5],[1,'touchstart']],[[4],[[5],[[4],[[5],[[5],[1,'touchLineA']],[[4],[[5],[1,'$event']]]]]]]]]]])
+Z([[4],[[5],[[5],[[5],[[4],[[5],[[5],[1,'touchstart']],[[4],[[5],[[4],[[5],[[5],[1,'touchLineA']],[[4],[[5],[1,'$event']]]]]]]]]],[[4],[[5],[[5],[1,'touchmove']],[[4],[[5],[[4],[[5],[[5],[1,'moveLineA']],[[4],[[5],[1,'$event']]]]]]]]]],[[4],[[5],[[5],[1,'touchend']],[[4],[[5],[[4],[[5],[[5],[1,'touchEndLineA']],[[4],[[5],[1,'$event']]]]]]]]]]])
+Z([3,'true'])
 Z([[2,'*'],[[7],[3,'cHeight']],[[7],[3,'pixelRatio']]])
-Z(z[3])
+Z(z[5])
 Z([[2,'+'],[[2,'+'],[[2,'+'],[1,'width:'],[[2,'+'],[[7],[3,'cWidth']],[1,'px']]],[1,';']],[[2,'+'],[[2,'+'],[1,'height:'],[[2,'+'],[[7],[3,'cHeight']],[1,'px']]],[1,';']]])
 Z([[2,'*'],[[7],[3,'cWidth']],[[7],[3,'pixelRatio']]])
 })(__WXML_GLOBAL__.ops_cached.$gwx_2);return __WXML_GLOBAL__.ops_cached.$gwx_2
@@ -1090,20 +1093,20 @@ function gz$gwx_3(){
 if( __WXML_GLOBAL__.ops_cached.$gwx_3)return __WXML_GLOBAL__.ops_cached.$gwx_3
 __WXML_GLOBAL__.ops_cached.$gwx_3=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
-Z([3,'container data-v-bb83a7be'])
-Z([3,'nav-list data-v-bb83a7be'])
+Z([3,'container data-v-76a973e3'])
+Z([3,'nav-list data-v-76a973e3'])
 Z([3,'index'])
 Z([3,'item'])
 Z([[7],[3,'list']])
 Z(z[2])
 Z([3,'__e'])
-Z([[4],[[5],[[5],[1,'nav-item data-v-bb83a7be']],[[2,'?:'],[[2,'=='],[[7],[3,'index']],[[7],[3,'viewNavIndex']]],[1,'active'],[1,'']]]])
+Z([[4],[[5],[[5],[1,'nav-item data-v-76a973e3']],[[2,'?:'],[[2,'=='],[[7],[3,'index']],[[7],[3,'viewNavIndex']]],[1,'active'],[1,'']]]])
 Z([[4],[[5],[[4],[[5],[[5],[1,'tap']],[[4],[[5],[[4],[[5],[[5],[1,'handleClickNav']],[[4],[[5],[[7],[3,'index']]]]]]]]]]]])
-Z([a,[[6],[[7],[3,'item']],[3,'a']]])
-Z([3,'list-wrapper data-v-bb83a7be'])
+Z([a,[[6],[[7],[3,'item']],[3,'name']]])
+Z([3,'list-wrapper data-v-76a973e3'])
 Z(z[6])
 Z(z[6])
-Z([3,'list-container data-v-bb83a7be'])
+Z([3,'list-container data-v-76a973e3'])
 Z([[4],[[5],[[5],[[4],[[5],[[5],[1,'scroll']],[[4],[[5],[[4],[[5],[[5],[1,'handleListScroll']],[[4],[[5],[1,'$event']]]]]]]]]],[[4],[[5],[[5],[1,'touchstart']],[[4],[[5],[[4],[[5],[[5],[1,'handleTouchScrollView']],[[4],[[5],[1,'$event']]]]]]]]]]])
 Z([3,'list-container'])
 Z([[2,'+'],[1,'scroll-item-'],[[7],[3,'clickedNavIndex']]])
@@ -1114,28 +1117,57 @@ Z([3,'listIndex'])
 Z(z[3])
 Z(z[4])
 Z(z[20])
-Z([3,'list data-v-bb83a7be'])
+Z([3,'list data-v-76a973e3'])
 Z([[2,'+'],[1,'scroll-item-'],[[7],[3,'listIndex']]])
-Z([3,'title data-v-bb83a7be'])
-Z([3,'data-v-bb83a7be'])
+Z([3,'title data-v-76a973e3'])
+Z([3,'data-v-76a973e3'])
 Z([a,[[2,'+'],[1,'传感器'],[[7],[3,'listIndex']]]])
-Z([3,'item-container data-v-bb83a7be'])
+Z([3,'item-container data-v-76a973e3'])
 Z(z[2])
 Z(z[3])
-Z([[4],[[5],[[5],[[5],[[5],[[5],[1,1]],[1,2]],[1,3]],[1,4]],[1,5]]])
+Z([[6],[[7],[3,'item']],[3,'children']])
 Z(z[2])
 Z(z[6])
-Z([3,'item data-v-bb83a7be'])
+Z([3,'item data-v-76a973e3'])
 Z([[4],[[5],[[4],[[5],[[5],[1,'tap']],[[4],[[5],[[4],[[5],[[5],[1,'device']],[[4],[[5],[1,'$event']]]]]]]]]]])
 Z(z[27])
 Z([3,'../../static/logo1.jpg'])
-Z([3,'name data-v-bb83a7be'])
-Z([a,[[2,'+'],[[2,'+'],[[2,'+'],[1,'设备'],[[6],[[7],[3,'item']],[3,'b']]],[1,'-']],[[7],[3,'index']]]])
+Z([3,'name data-v-76a973e3'])
+Z([a,[[2,'+'],[[2,'+'],[[6],[[7],[3,'item']],[3,'name']],[1,'-']],[[6],[[7],[3,'item']],[3,'value']]]])
 })(__WXML_GLOBAL__.ops_cached.$gwx_3);return __WXML_GLOBAL__.ops_cached.$gwx_3
 }
 function gz$gwx_4(){
 if( __WXML_GLOBAL__.ops_cached.$gwx_4)return __WXML_GLOBAL__.ops_cached.$gwx_4
 __WXML_GLOBAL__.ops_cached.$gwx_4=[];
+(function(z){var a=11;function Z(ops){z.push(ops)}
+Z([3,'__e'])
+Z(z[0])
+Z(z[0])
+Z([3,'rui-picker rui-class'])
+Z([[4],[[5],[[5],[[5],[[4],[[5],[[5],[1,'change']],[[4],[[5],[[4],[[5],[[5],[1,'changeDate']],[[4],[[5],[1,'$event']]]]]]]]]],[[4],[[5],[[5],[1,'cancel']],[[4],[[5],[[4],[[5],[[5],[1,'cancelDate']],[[4],[[5],[1,'$event']]]]]]]]]],[[4],[[5],[[5],[1,'columnchange']],[[4],[[5],[[4],[[5],[[5],[1,'columnchangeDate']],[[4],[[5],[1,'$event']]]]]]]]]]])
+Z([[7],[3,'curDisabled']])
+Z([3,'multiSelector'])
+Z([[7],[3,'times']])
+Z([[7],[3,'timesIndex']])
+Z([a,[[2,'+'],[[2,'+'],[1,''],[[7],[3,'curValue']]],[1,'']]])
+})(__WXML_GLOBAL__.ops_cached.$gwx_4);return __WXML_GLOBAL__.ops_cached.$gwx_4
+}
+function gz$gwx_5(){
+if( __WXML_GLOBAL__.ops_cached.$gwx_5)return __WXML_GLOBAL__.ops_cached.$gwx_5
+__WXML_GLOBAL__.ops_cached.$gwx_5=[];
+(function(z){var a=11;function Z(ops){z.push(ops)}
+Z([3,'uni-countdown data-v-307380d8'])
+Z([3,'uni-countdown__number data-v-307380d8'])
+Z([[2,'+'],[[2,'+'],[[2,'+'],[[2,'+'],[1,'border-color:'],[[7],[3,'borderColor']]],[1,';']],[[2,'+'],[[2,'+'],[1,'color:'],[[7],[3,'color']]],[1,';']]],[[2,'+'],[[2,'+'],[1,'background-color:'],[[7],[3,'backgroundColor']]],[1,';']]])
+Z([a,[[7],[3,'s']]])
+Z([3,'uni-countdown__splitor data-v-307380d8'])
+Z([[2,'+'],[[2,'+'],[1,'color:'],[[7],[3,'splitorColor']]],[1,';']])
+Z([3,'秒后更新数据'])
+})(__WXML_GLOBAL__.ops_cached.$gwx_5);return __WXML_GLOBAL__.ops_cached.$gwx_5
+}
+function gz$gwx_6(){
+if( __WXML_GLOBAL__.ops_cached.$gwx_6)return __WXML_GLOBAL__.ops_cached.$gwx_6
+__WXML_GLOBAL__.ops_cached.$gwx_6=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
 Z([[4],[[5],[[5],[1,'segmented-control data-v-7bf69b80']],[[2,'?:'],[[2,'==='],[[7],[3,'styleType']],[1,'text']],[1,'segmented-control--text'],[1,'segmented-control--button']]]])
 Z([[2,'+'],[[2,'+'],[1,'border-color:'],[[2,'?:'],[[2,'==='],[[7],[3,'styleType']],[1,'text']],[1,''],[[7],[3,'activeColor']]]],[1,';']])
@@ -1150,26 +1182,26 @@ Z([[2,'+'],[[2,'+'],[[2,'+'],[1,'background-color:'],[[2,'?:'],[[2,'&&'],[[2,'==
 Z([3,'segmented-control__text data-v-7bf69b80'])
 Z([[2,'+'],[[2,'+'],[1,'color:'],[[2,'?:'],[[2,'==='],[[7],[3,'index']],[[7],[3,'currentIndex']]],[[2,'?:'],[[2,'==='],[[7],[3,'styleType']],[1,'text']],[[7],[3,'activeColor']],[1,'#fff']],[[2,'?:'],[[2,'==='],[[7],[3,'styleType']],[1,'text']],[1,'#000'],[[7],[3,'activeColor']]]]],[1,';']])
 Z([a,[[7],[3,'item']]])
-})(__WXML_GLOBAL__.ops_cached.$gwx_4);return __WXML_GLOBAL__.ops_cached.$gwx_4
-}
-function gz$gwx_5(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_5)return __WXML_GLOBAL__.ops_cached.$gwx_5
-__WXML_GLOBAL__.ops_cached.$gwx_5=[];
-(function(z){var a=11;function Z(ops){z.push(ops)}
-Z([3,'__l'])
-Z([3,'6ddea895-1'])
-})(__WXML_GLOBAL__.ops_cached.$gwx_5);return __WXML_GLOBAL__.ops_cached.$gwx_5
-}
-function gz$gwx_6(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_6)return __WXML_GLOBAL__.ops_cached.$gwx_6
-__WXML_GLOBAL__.ops_cached.$gwx_6=[];
-(function(z){var a=11;function Z(ops){z.push(ops)}
-Z([3,'uni-padding-wrap'])
 })(__WXML_GLOBAL__.ops_cached.$gwx_6);return __WXML_GLOBAL__.ops_cached.$gwx_6
 }
 function gz$gwx_7(){
 if( __WXML_GLOBAL__.ops_cached.$gwx_7)return __WXML_GLOBAL__.ops_cached.$gwx_7
 __WXML_GLOBAL__.ops_cached.$gwx_7=[];
+(function(z){var a=11;function Z(ops){z.push(ops)}
+Z([3,'__l'])
+Z([3,'6ddea895-1'])
+})(__WXML_GLOBAL__.ops_cached.$gwx_7);return __WXML_GLOBAL__.ops_cached.$gwx_7
+}
+function gz$gwx_8(){
+if( __WXML_GLOBAL__.ops_cached.$gwx_8)return __WXML_GLOBAL__.ops_cached.$gwx_8
+__WXML_GLOBAL__.ops_cached.$gwx_8=[];
+(function(z){var a=11;function Z(ops){z.push(ops)}
+Z([3,'uni-padding-wrap'])
+})(__WXML_GLOBAL__.ops_cached.$gwx_8);return __WXML_GLOBAL__.ops_cached.$gwx_8
+}
+function gz$gwx_9(){
+if( __WXML_GLOBAL__.ops_cached.$gwx_9)return __WXML_GLOBAL__.ops_cached.$gwx_9
+__WXML_GLOBAL__.ops_cached.$gwx_9=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
 Z([3,'uni-padding-wrap data-v-264bf558'])
 Z([3,'header data-v-264bf558'])
@@ -1213,18 +1245,18 @@ Z(z[21])
 Z(z[21])
 Z([3,'color:#4CD964;'])
 Z([3,'●正常'])
-})(__WXML_GLOBAL__.ops_cached.$gwx_7);return __WXML_GLOBAL__.ops_cached.$gwx_7
+})(__WXML_GLOBAL__.ops_cached.$gwx_9);return __WXML_GLOBAL__.ops_cached.$gwx_9
 }
-function gz$gwx_8(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_8)return __WXML_GLOBAL__.ops_cached.$gwx_8
-__WXML_GLOBAL__.ops_cached.$gwx_8=[];
+function gz$gwx_10(){
+if( __WXML_GLOBAL__.ops_cached.$gwx_10)return __WXML_GLOBAL__.ops_cached.$gwx_10
+__WXML_GLOBAL__.ops_cached.$gwx_10=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
 Z([3,'uni-padding-wrap'])
-})(__WXML_GLOBAL__.ops_cached.$gwx_8);return __WXML_GLOBAL__.ops_cached.$gwx_8
+})(__WXML_GLOBAL__.ops_cached.$gwx_10);return __WXML_GLOBAL__.ops_cached.$gwx_10
 }
-function gz$gwx_9(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_9)return __WXML_GLOBAL__.ops_cached.$gwx_9
-__WXML_GLOBAL__.ops_cached.$gwx_9=[];
+function gz$gwx_11(){
+if( __WXML_GLOBAL__.ops_cached.$gwx_11)return __WXML_GLOBAL__.ops_cached.$gwx_11
+__WXML_GLOBAL__.ops_cached.$gwx_11=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
 Z([3,'sensor'])
 Z([3,'list'])
@@ -1234,12 +1266,12 @@ Z([3,'●运行中'])
 Z([3,'list_b'])
 Z([3,'list_b_t'])
 Z([3,'num'])
-Z([3,'40℃'])
+Z([a,[[2,'+'],[[6],[[7],[3,'currentData']],[3,'wendu']],[1,'℃']]])
 Z([3,'unit'])
 Z([3,'温度'])
 Z(z[6])
 Z(z[7])
-Z([3,'50%'])
+Z([a,[[2,'+'],[[6],[[7],[3,'$root']],[3,'g0']],[1,'%']]])
 Z(z[9])
 Z([3,'湿度'])
 Z([3,'allChart'])
@@ -1255,24 +1287,48 @@ Z([[7],[3,'items']])
 Z([3,'fc6f6d80-1'])
 Z([[2,'==='],[[7],[3,'current']],[1,0]])
 Z(z[19])
+Z(z[20])
+Z([[4],[[5],[[4],[[5],[[5],[1,'^timeup']],[[4],[[5],[[4],[[5],[1,'getServerData']]]]]]]]])
+Z([[7],[3,'stateNum']])
+Z([1,false])
 Z([3,'fc6f6d80-2'])
+Z([[7],[3,'showLine']])
+Z([[7],[3,'XYdata']])
 Z(z[19])
+Z([[7],[3,'dataAll']])
 Z([3,'fc6f6d80-3'])
 Z([[2,'==='],[[7],[3,'current']],[1,1]])
+Z([3,'times'])
+Z([3,'times_s'])
+Z([3,'开始时间：'])
 Z(z[19])
+Z(z[20])
+Z(z[20])
+Z([[4],[[5],[[5],[[4],[[5],[[5],[1,'^change']],[[4],[[5],[[4],[[5],[1,'bindChange1']]]]]]]],[[4],[[5],[[5],[1,'^cancel']],[[4],[[5],[[4],[[5],[1,'bindCancel']]]]]]]]])
+Z([3,'2030-12-30 23:59:59'])
+Z([3,'second'])
+Z([3,'2010-00-00 00:00:00'])
+Z([[6],[[7],[3,'dataAll']],[3,'startDate']])
 Z([3,'fc6f6d80-4'])
+Z(z[41])
+Z([3,'结束时间：'])
 Z(z[19])
+Z(z[20])
+Z(z[20])
+Z([[4],[[5],[[5],[[4],[[5],[[5],[1,'^change']],[[4],[[5],[[4],[[5],[1,'bindChange2']]]]]]]],[[4],[[5],[[5],[1,'^cancel']],[[4],[[5],[[4],[[5],[1,'bindCancel']]]]]]]]])
+Z(z[48])
+Z([[6],[[7],[3,'dataAll']],[3,'endDate']])
 Z([3,'fc6f6d80-5'])
-Z([[2,'==='],[[7],[3,'current']],[1,2]])
+Z(z[34])
+Z([[7],[3,'XYdata1']])
 Z(z[19])
+Z(z[37])
 Z([3,'fc6f6d80-6'])
-Z(z[19])
-Z([3,'fc6f6d80-7'])
-})(__WXML_GLOBAL__.ops_cached.$gwx_9);return __WXML_GLOBAL__.ops_cached.$gwx_9
+})(__WXML_GLOBAL__.ops_cached.$gwx_11);return __WXML_GLOBAL__.ops_cached.$gwx_11
 }
-function gz$gwx_10(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_10)return __WXML_GLOBAL__.ops_cached.$gwx_10
-__WXML_GLOBAL__.ops_cached.$gwx_10=[];
+function gz$gwx_12(){
+if( __WXML_GLOBAL__.ops_cached.$gwx_12)return __WXML_GLOBAL__.ops_cached.$gwx_12
+__WXML_GLOBAL__.ops_cached.$gwx_12=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
 Z([3,'header'])
 Z([3,'headerb'])
@@ -1284,13 +1340,13 @@ Z([3,'消息中心'])
 Z([3,'flow'])
 Z([3,'font-size:40rpx;'])
 Z([3,'\x3e'])
-})(__WXML_GLOBAL__.ops_cached.$gwx_10);return __WXML_GLOBAL__.ops_cached.$gwx_10
+})(__WXML_GLOBAL__.ops_cached.$gwx_12);return __WXML_GLOBAL__.ops_cached.$gwx_12
 }
 __WXML_GLOBAL__.ops_set.$gwx=z;
 __WXML_GLOBAL__.ops_init.$gwx=true;
 var nv_require=function(){var nnm={};var nom={};return function(n){return function(){if(!nnm[n]) return undefined;try{if(!nom[n])nom[n]=nnm[n]();return nom[n];}catch(e){e.message=e.message.replace(/nv_/g,'');var tmp = e.stack.substring(0,e.stack.lastIndexOf(n));e.stack = tmp.substring(0,tmp.lastIndexOf('\n'));e.stack = e.stack.replace(/\snv_/g,' ');e.stack = $gstack(e.stack);e.stack += '\n    at ' + n.substring(2);console.error(e);}
 }}}()
-var x=['./components/chart/bar/bar.wxml','./components/chart/line.wxml','./components/easy-scroll/easy-scroll.wxml','./components/uni-segmented-control/uni-segmented-control.wxml','./pages/AddDevice/index.wxml','./pages/find/find.wxml','./pages/index/index.wxml','./pages/order/order.wxml','./pages/sensor/sensor.wxml','./pages/user/user.wxml'];d_[x[0]]={}
+var x=['./components/chart/bar/bar.wxml','./components/chart/line.wxml','./components/easy-scroll/easy-scroll.wxml','./components/rattenking-dtpicker/rattenking-dtpicker.wxml','./components/uni-countdown/uni-countdown.wxml','./components/uni-segmented-control/uni-segmented-control.wxml','./pages/AddDevice/index.wxml','./pages/find/find.wxml','./pages/index/index.wxml','./pages/order/order.wxml','./pages/sensor/sensor.wxml','./pages/user/user.wxml'];d_[x[0]]={}
 var m0=function(e,s,r,gg){
 var z=gz$gwx_1()
 var oB=_n('view')
@@ -1311,7 +1367,7 @@ var cF=_n('view')
 _rz(z,cF,'class',0,e,s,gg)
 var hG=_n('view')
 _rz(z,hG,'class',1,e,s,gg)
-var oH=_mz(z,'canvas',['bindtouchstart',2,'canvasId',1,'class',2,'data-event-opts',3,'height',4,'id',5,'style',6,'width',7],[],e,s,gg)
+var oH=_mz(z,'canvas',['bindtouchend',2,'bindtouchmove',1,'bindtouchstart',2,'canvasId',3,'class',4,'data-event-opts',5,'disableScroll',6,'height',7,'id',8,'style',9,'width',10],[],e,s,gg)
 _(hG,oH)
 _(cF,hG)
 _(r,cF)
@@ -1385,20 +1441,9 @@ e_[x[2]]={f:m2,j:[],i:[],ti:[],ic:[]}
 d_[x[3]]={}
 var m3=function(e,s,r,gg){
 var z=gz$gwx_4()
-var oHB=_mz(z,'view',['class',0,'style',1],[],e,s,gg)
-var xIB=_v()
+var oHB=_mz(z,'picker',['bindcancel',0,'bindchange',1,'bindcolumnchange',1,'class',2,'data-event-opts',3,'disabled',4,'mode',5,'range',6,'value',7],[],e,s,gg)
+var xIB=_oz(z,9,e,s,gg)
 _(oHB,xIB)
-var oJB=function(cLB,fKB,hMB,gg){
-var cOB=_mz(z,'view',['bindtap',6,'class',1,'data-event-opts',2,'style',3],[],cLB,fKB,gg)
-var oPB=_mz(z,'text',['class',10,'style',1],[],cLB,fKB,gg)
-var lQB=_oz(z,12,cLB,fKB,gg)
-_(oPB,lQB)
-_(cOB,oPB)
-_(hMB,cOB)
-return hMB
-}
-xIB.wxXCkey=2
-_2z(z,4,oJB,e,s,gg,xIB,'item','index','index')
 _(r,oHB)
 return r
 }
@@ -1406,247 +1451,304 @@ e_[x[3]]={f:m3,j:[],i:[],ti:[],ic:[]}
 d_[x[4]]={}
 var m4=function(e,s,r,gg){
 var z=gz$gwx_5()
-var tSB=_n('view')
-var eTB=_mz(z,'easy-scroll',['bind:__l',0,'vueId',1],[],e,s,gg)
-_(tSB,eTB)
-_(r,tSB)
+var fKB=_n('view')
+_rz(z,fKB,'class',0,e,s,gg)
+var cLB=_mz(z,'text',['class',1,'style',1],[],e,s,gg)
+var hMB=_oz(z,3,e,s,gg)
+_(cLB,hMB)
+_(fKB,cLB)
+var oNB=_mz(z,'text',['class',4,'style',1],[],e,s,gg)
+var cOB=_oz(z,6,e,s,gg)
+_(oNB,cOB)
+_(fKB,oNB)
+_(r,fKB)
 return r
 }
 e_[x[4]]={f:m4,j:[],i:[],ti:[],ic:[]}
 d_[x[5]]={}
 var m5=function(e,s,r,gg){
 var z=gz$gwx_6()
-var oVB=_n('view')
-_rz(z,oVB,'class',0,e,s,gg)
-_(r,oVB)
+var lQB=_mz(z,'view',['class',0,'style',1],[],e,s,gg)
+var aRB=_v()
+_(lQB,aRB)
+var tSB=function(bUB,eTB,oVB,gg){
+var oXB=_mz(z,'view',['bindtap',6,'class',1,'data-event-opts',2,'style',3],[],bUB,eTB,gg)
+var fYB=_mz(z,'text',['class',10,'style',1],[],bUB,eTB,gg)
+var cZB=_oz(z,12,bUB,eTB,gg)
+_(fYB,cZB)
+_(oXB,fYB)
+_(oVB,oXB)
+return oVB
+}
+aRB.wxXCkey=2
+_2z(z,4,tSB,e,s,gg,aRB,'item','index','index')
+_(r,lQB)
 return r
 }
 e_[x[5]]={f:m5,j:[],i:[],ti:[],ic:[]}
 d_[x[6]]={}
 var m6=function(e,s,r,gg){
 var z=gz$gwx_7()
-var oXB=_n('view')
-_rz(z,oXB,'class',0,e,s,gg)
-var fYB=_n('view')
-_rz(z,fYB,'class',1,e,s,gg)
-var cZB=_n('view')
-_rz(z,cZB,'class',2,e,s,gg)
-var h1B=_n('view')
-_rz(z,h1B,'class',3,e,s,gg)
 var o2B=_n('view')
-_rz(z,o2B,'class',4,e,s,gg)
-var c3B=_mz(z,'view',['class',5,'style',1],[],e,s,gg)
-var o4B=_oz(z,7,e,s,gg)
-_(c3B,o4B)
+var c3B=_mz(z,'easy-scroll',['bind:__l',0,'vueId',1],[],e,s,gg)
 _(o2B,c3B)
-var l5B=_mz(z,'view',['class',8,'style',1],[],e,s,gg)
-var a6B=_oz(z,10,e,s,gg)
-_(l5B,a6B)
-_(o2B,l5B)
-_(h1B,o2B)
-_(cZB,h1B)
-_(fYB,cZB)
-_(oXB,fYB)
-var t7B=_n('view')
-_rz(z,t7B,'class',11,e,s,gg)
-var e8B=_v()
-_(t7B,e8B)
-var b9B=function(xAC,o0B,oBC,gg){
-var cDC=_mz(z,'view',['bindtap',16,'class',1,'data-event-opts',2],[],xAC,o0B,gg)
-var hEC=_n('view')
-_rz(z,hEC,'class',19,xAC,o0B,gg)
-var oFC=_n('view')
-_rz(z,oFC,'class',20,xAC,o0B,gg)
-var cGC=_mz(z,'text',['class',21,'style',1],[],xAC,o0B,gg)
-var oHC=_oz(z,23,xAC,o0B,gg)
-_(cGC,oHC)
-_(oFC,cGC)
-var lIC=_n('text')
-_rz(z,lIC,'class',24,xAC,o0B,gg)
-var aJC=_oz(z,25,xAC,o0B,gg)
-_(lIC,aJC)
-_(oFC,lIC)
-_(hEC,oFC)
-var tKC=_n('view')
-_rz(z,tKC,'class',26,xAC,o0B,gg)
-var eLC=_n('view')
-_rz(z,eLC,'class',27,xAC,o0B,gg)
-var bMC=_n('text')
-_rz(z,bMC,'class',28,xAC,o0B,gg)
-var oNC=_oz(z,29,xAC,o0B,gg)
-_(bMC,oNC)
-_(eLC,bMC)
-var xOC=_n('text')
-_rz(z,xOC,'class',30,xAC,o0B,gg)
-var oPC=_oz(z,31,xAC,o0B,gg)
-_(xOC,oPC)
-_(eLC,xOC)
-_(tKC,eLC)
-var fQC=_n('view')
-_rz(z,fQC,'class',32,xAC,o0B,gg)
-var cRC=_n('text')
-_rz(z,cRC,'class',33,xAC,o0B,gg)
-var hSC=_oz(z,34,xAC,o0B,gg)
-_(cRC,hSC)
-_(fQC,cRC)
-var oTC=_n('text')
-_rz(z,oTC,'class',35,xAC,o0B,gg)
-var cUC=_oz(z,36,xAC,o0B,gg)
-_(oTC,cUC)
-_(fQC,oTC)
-_(tKC,fQC)
-var oVC=_n('view')
-_rz(z,oVC,'class',37,xAC,o0B,gg)
-var lWC=_n('text')
-_rz(z,lWC,'class',38,xAC,o0B,gg)
-_(oVC,lWC)
-var aXC=_mz(z,'text',['class',39,'style',1],[],xAC,o0B,gg)
-var tYC=_oz(z,41,xAC,o0B,gg)
-_(aXC,tYC)
-_(oVC,aXC)
-_(tKC,oVC)
-_(hEC,tKC)
-_(cDC,hEC)
-_(oBC,cDC)
-return oBC
-}
-e8B.wxXCkey=2
-_2z(z,14,b9B,e,s,gg,e8B,'v','i','i')
-_(oXB,t7B)
-_(r,oXB)
+_(r,o2B)
 return r
 }
 e_[x[6]]={f:m6,j:[],i:[],ti:[],ic:[]}
 d_[x[7]]={}
 var m7=function(e,s,r,gg){
 var z=gz$gwx_8()
-var b1C=_n('view')
-_rz(z,b1C,'class',0,e,s,gg)
-_(r,b1C)
+var l5B=_n('view')
+_rz(z,l5B,'class',0,e,s,gg)
+_(r,l5B)
 return r
 }
 e_[x[7]]={f:m7,j:[],i:[],ti:[],ic:[]}
 d_[x[8]]={}
 var m8=function(e,s,r,gg){
 var z=gz$gwx_9()
-var x3C=_n('view')
-_rz(z,x3C,'class',0,e,s,gg)
-var o4C=_n('view')
-_rz(z,o4C,'class',1,e,s,gg)
-var f5C=_n('view')
-_rz(z,f5C,'style',2,e,s,gg)
-var c6C=_n('text')
-_rz(z,c6C,'style',3,e,s,gg)
-var h7C=_oz(z,4,e,s,gg)
-_(c6C,h7C)
-_(f5C,c6C)
-_(o4C,f5C)
-var o8C=_n('view')
-_rz(z,o8C,'class',5,e,s,gg)
-var c9C=_n('view')
-_rz(z,c9C,'class',6,e,s,gg)
-var o0C=_n('text')
-_rz(z,o0C,'class',7,e,s,gg)
-var lAD=_oz(z,8,e,s,gg)
-_(o0C,lAD)
-_(c9C,o0C)
-var aBD=_n('text')
-_rz(z,aBD,'class',9,e,s,gg)
-var tCD=_oz(z,10,e,s,gg)
-_(aBD,tCD)
-_(c9C,aBD)
-_(o8C,c9C)
-var eDD=_n('view')
-_rz(z,eDD,'class',11,e,s,gg)
-var bED=_n('text')
-_rz(z,bED,'class',12,e,s,gg)
-var oFD=_oz(z,13,e,s,gg)
-_(bED,oFD)
-_(eDD,bED)
-var xGD=_n('text')
-_rz(z,xGD,'class',14,e,s,gg)
-var oHD=_oz(z,15,e,s,gg)
-_(xGD,oHD)
-_(eDD,xGD)
-_(o8C,eDD)
-_(o4C,o8C)
+var t7B=_n('view')
+_rz(z,t7B,'class',0,e,s,gg)
+var e8B=_n('view')
+_rz(z,e8B,'class',1,e,s,gg)
+var b9B=_n('view')
+_rz(z,b9B,'class',2,e,s,gg)
+var o0B=_n('view')
+_rz(z,o0B,'class',3,e,s,gg)
+var xAC=_n('view')
+_rz(z,xAC,'class',4,e,s,gg)
+var oBC=_mz(z,'view',['class',5,'style',1],[],e,s,gg)
+var fCC=_oz(z,7,e,s,gg)
+_(oBC,fCC)
+_(xAC,oBC)
+var cDC=_mz(z,'view',['class',8,'style',1],[],e,s,gg)
+var hEC=_oz(z,10,e,s,gg)
+_(cDC,hEC)
+_(xAC,cDC)
+_(o0B,xAC)
+_(b9B,o0B)
+_(e8B,b9B)
+_(t7B,e8B)
+var oFC=_n('view')
+_rz(z,oFC,'class',11,e,s,gg)
+var cGC=_v()
+_(oFC,cGC)
+var oHC=function(aJC,lIC,tKC,gg){
+var bMC=_mz(z,'view',['bindtap',16,'class',1,'data-event-opts',2],[],aJC,lIC,gg)
+var oNC=_n('view')
+_rz(z,oNC,'class',19,aJC,lIC,gg)
+var xOC=_n('view')
+_rz(z,xOC,'class',20,aJC,lIC,gg)
+var oPC=_mz(z,'text',['class',21,'style',1],[],aJC,lIC,gg)
+var fQC=_oz(z,23,aJC,lIC,gg)
+_(oPC,fQC)
+_(xOC,oPC)
+var cRC=_n('text')
+_rz(z,cRC,'class',24,aJC,lIC,gg)
+var hSC=_oz(z,25,aJC,lIC,gg)
+_(cRC,hSC)
+_(xOC,cRC)
+_(oNC,xOC)
+var oTC=_n('view')
+_rz(z,oTC,'class',26,aJC,lIC,gg)
+var cUC=_n('view')
+_rz(z,cUC,'class',27,aJC,lIC,gg)
+var oVC=_n('text')
+_rz(z,oVC,'class',28,aJC,lIC,gg)
+var lWC=_oz(z,29,aJC,lIC,gg)
+_(oVC,lWC)
+_(cUC,oVC)
+var aXC=_n('text')
+_rz(z,aXC,'class',30,aJC,lIC,gg)
+var tYC=_oz(z,31,aJC,lIC,gg)
+_(aXC,tYC)
+_(cUC,aXC)
+_(oTC,cUC)
+var eZC=_n('view')
+_rz(z,eZC,'class',32,aJC,lIC,gg)
+var b1C=_n('text')
+_rz(z,b1C,'class',33,aJC,lIC,gg)
+var o2C=_oz(z,34,aJC,lIC,gg)
+_(b1C,o2C)
+_(eZC,b1C)
+var x3C=_n('text')
+_rz(z,x3C,'class',35,aJC,lIC,gg)
+var o4C=_oz(z,36,aJC,lIC,gg)
 _(x3C,o4C)
-var fID=_n('view')
-_rz(z,fID,'class',16,e,s,gg)
-var cJD=_n('view')
-_rz(z,cJD,'class',17,e,s,gg)
-var hKD=_mz(z,'uni-segmented-control',['activeColor',18,'bind:__l',1,'bind:clickItem',2,'current',3,'data-event-opts',4,'style',5,'styleType',6,'values',7,'vueId',8],[],e,s,gg)
-_(cJD,hKD)
-var oLD=_n('view')
-var cMD=_v()
-_(oLD,cMD)
-if(_oz(z,27,e,s,gg)){cMD.wxVkey=1
-var aPD=_n('view')
-var tQD=_mz(z,'line-chart',['bind:__l',28,'vueId',1],[],e,s,gg)
-_(aPD,tQD)
-var eRD=_mz(z,'bar-chart',['bind:__l',30,'vueId',1],[],e,s,gg)
-_(aPD,eRD)
-_(cMD,aPD)
+_(eZC,x3C)
+_(oTC,eZC)
+var f5C=_n('view')
+_rz(z,f5C,'class',37,aJC,lIC,gg)
+var c6C=_n('text')
+_rz(z,c6C,'class',38,aJC,lIC,gg)
+_(f5C,c6C)
+var h7C=_mz(z,'text',['class',39,'style',1],[],aJC,lIC,gg)
+var o8C=_oz(z,41,aJC,lIC,gg)
+_(h7C,o8C)
+_(f5C,h7C)
+_(oTC,f5C)
+_(oNC,oTC)
+_(bMC,oNC)
+_(tKC,bMC)
+return tKC
 }
-var oND=_v()
-_(oLD,oND)
-if(_oz(z,32,e,s,gg)){oND.wxVkey=1
-var bSD=_n('view')
-var oTD=_mz(z,'line-chart',['bind:__l',33,'vueId',1],[],e,s,gg)
-_(bSD,oTD)
-var xUD=_mz(z,'bar-chart',['bind:__l',35,'vueId',1],[],e,s,gg)
-_(bSD,xUD)
-_(oND,bSD)
-}
-var lOD=_v()
-_(oLD,lOD)
-if(_oz(z,37,e,s,gg)){lOD.wxVkey=1
-var oVD=_n('view')
-var fWD=_mz(z,'line-chart',['bind:__l',38,'vueId',1],[],e,s,gg)
-_(oVD,fWD)
-var cXD=_mz(z,'bar-chart',['bind:__l',40,'vueId',1],[],e,s,gg)
-_(oVD,cXD)
-_(lOD,oVD)
-}
-cMD.wxXCkey=1
-cMD.wxXCkey=3
-oND.wxXCkey=1
-oND.wxXCkey=3
-lOD.wxXCkey=1
-lOD.wxXCkey=3
-_(cJD,oLD)
-_(fID,cJD)
-_(x3C,fID)
-_(r,x3C)
+cGC.wxXCkey=2
+_2z(z,14,oHC,e,s,gg,cGC,'v','i','i')
+_(t7B,oFC)
+_(r,t7B)
 return r
 }
 e_[x[8]]={f:m8,j:[],i:[],ti:[],ic:[]}
 d_[x[9]]={}
 var m9=function(e,s,r,gg){
 var z=gz$gwx_10()
-var oZD=_n('view')
-_rz(z,oZD,'class',0,e,s,gg)
-var c1D=_n('view')
-_rz(z,c1D,'class',1,e,s,gg)
-var o2D=_n('view')
-_rz(z,o2D,'class',2,e,s,gg)
-var l3D=_n('view')
-_rz(z,l3D,'class',3,e,s,gg)
-var a4D=_mz(z,'view',['class',4,'style',1],[],e,s,gg)
-var t5D=_oz(z,6,e,s,gg)
-_(a4D,t5D)
-_(l3D,a4D)
-var e6D=_mz(z,'view',['class',7,'style',1],[],e,s,gg)
-var b7D=_oz(z,9,e,s,gg)
-_(e6D,b7D)
-_(l3D,e6D)
-_(o2D,l3D)
-_(c1D,o2D)
-_(oZD,c1D)
-_(r,oZD)
+var o0C=_n('view')
+_rz(z,o0C,'class',0,e,s,gg)
+_(r,o0C)
 return r
 }
 e_[x[9]]={f:m9,j:[],i:[],ti:[],ic:[]}
+d_[x[10]]={}
+var m10=function(e,s,r,gg){
+var z=gz$gwx_11()
+var aBD=_n('view')
+_rz(z,aBD,'class',0,e,s,gg)
+var tCD=_n('view')
+_rz(z,tCD,'class',1,e,s,gg)
+var eDD=_n('view')
+_rz(z,eDD,'style',2,e,s,gg)
+var bED=_n('text')
+_rz(z,bED,'style',3,e,s,gg)
+var oFD=_oz(z,4,e,s,gg)
+_(bED,oFD)
+_(eDD,bED)
+_(tCD,eDD)
+var xGD=_n('view')
+_rz(z,xGD,'class',5,e,s,gg)
+var oHD=_n('view')
+_rz(z,oHD,'class',6,e,s,gg)
+var fID=_n('text')
+_rz(z,fID,'class',7,e,s,gg)
+var cJD=_oz(z,8,e,s,gg)
+_(fID,cJD)
+_(oHD,fID)
+var hKD=_n('text')
+_rz(z,hKD,'class',9,e,s,gg)
+var oLD=_oz(z,10,e,s,gg)
+_(hKD,oLD)
+_(oHD,hKD)
+_(xGD,oHD)
+var cMD=_n('view')
+_rz(z,cMD,'class',11,e,s,gg)
+var oND=_n('text')
+_rz(z,oND,'class',12,e,s,gg)
+var lOD=_oz(z,13,e,s,gg)
+_(oND,lOD)
+_(cMD,oND)
+var aPD=_n('text')
+_rz(z,aPD,'class',14,e,s,gg)
+var tQD=_oz(z,15,e,s,gg)
+_(aPD,tQD)
+_(cMD,aPD)
+_(xGD,cMD)
+_(tCD,xGD)
+_(aBD,tCD)
+var eRD=_n('view')
+_rz(z,eRD,'class',16,e,s,gg)
+var bSD=_n('view')
+_rz(z,bSD,'class',17,e,s,gg)
+var oTD=_mz(z,'uni-segmented-control',['activeColor',18,'bind:__l',1,'bind:clickItem',2,'current',3,'data-event-opts',4,'style',5,'styleType',6,'values',7,'vueId',8],[],e,s,gg)
+_(bSD,oTD)
+var xUD=_n('view')
+var oVD=_v()
+_(xUD,oVD)
+if(_oz(z,27,e,s,gg)){oVD.wxVkey=1
+var cXD=_n('view')
+var oZD=_mz(z,'uni-countdown',['bind:__l',28,'bind:timeup',1,'data-event-opts',2,'second',3,'showDay',4,'vueId',5],[],e,s,gg)
+_(cXD,oZD)
+var hYD=_v()
+_(cXD,hYD)
+if(_oz(z,34,e,s,gg)){hYD.wxVkey=1
+var c1D=_mz(z,'line-chart',['XYdata',35,'bind:__l',1,'dataAll',2,'vueId',3],[],e,s,gg)
+_(hYD,c1D)
+}
+hYD.wxXCkey=1
+hYD.wxXCkey=3
+_(oVD,cXD)
+}
+var fWD=_v()
+_(xUD,fWD)
+if(_oz(z,39,e,s,gg)){fWD.wxVkey=1
+var o2D=_n('view')
+var a4D=_n('view')
+_rz(z,a4D,'class',40,e,s,gg)
+var t5D=_n('view')
+_rz(z,t5D,'class',41,e,s,gg)
+var e6D=_n('text')
+var b7D=_oz(z,42,e,s,gg)
+_(e6D,b7D)
+_(t5D,e6D)
+var o8D=_mz(z,'rui-date-picker',['bind:__l',43,'bind:cancel',1,'bind:change',2,'data-event-opts',3,'end',4,'fields',5,'start',6,'value',7,'vueId',8],[],e,s,gg)
+_(t5D,o8D)
+_(a4D,t5D)
+var x9D=_n('view')
+_rz(z,x9D,'class',52,e,s,gg)
+var o0D=_n('text')
+var fAE=_oz(z,53,e,s,gg)
+_(o0D,fAE)
+_(x9D,o0D)
+var cBE=_mz(z,'rui-date-picker',['bind:__l',54,'bind:cancel',1,'bind:change',2,'data-event-opts',3,'fields',4,'value',5,'vueId',6],[],e,s,gg)
+_(x9D,cBE)
+_(a4D,x9D)
+_(o2D,a4D)
+var l3D=_v()
+_(o2D,l3D)
+if(_oz(z,61,e,s,gg)){l3D.wxVkey=1
+var hCE=_mz(z,'line-chart',['XYdata',62,'bind:__l',1,'dataAll',2,'vueId',3],[],e,s,gg)
+_(l3D,hCE)
+}
+l3D.wxXCkey=1
+l3D.wxXCkey=3
+_(fWD,o2D)
+}
+oVD.wxXCkey=1
+oVD.wxXCkey=3
+fWD.wxXCkey=1
+fWD.wxXCkey=3
+_(bSD,xUD)
+_(eRD,bSD)
+_(aBD,eRD)
+_(r,aBD)
+return r
+}
+e_[x[10]]={f:m10,j:[],i:[],ti:[],ic:[]}
+d_[x[11]]={}
+var m11=function(e,s,r,gg){
+var z=gz$gwx_12()
+var cEE=_n('view')
+_rz(z,cEE,'class',0,e,s,gg)
+var oFE=_n('view')
+_rz(z,oFE,'class',1,e,s,gg)
+var lGE=_n('view')
+_rz(z,lGE,'class',2,e,s,gg)
+var aHE=_n('view')
+_rz(z,aHE,'class',3,e,s,gg)
+var tIE=_mz(z,'view',['class',4,'style',1],[],e,s,gg)
+var eJE=_oz(z,6,e,s,gg)
+_(tIE,eJE)
+_(aHE,tIE)
+var bKE=_mz(z,'view',['class',7,'style',1],[],e,s,gg)
+var oLE=_oz(z,9,e,s,gg)
+_(bKE,oLE)
+_(aHE,bKE)
+_(lGE,aHE)
+_(oFE,lGE)
+_(cEE,oFE)
+_(r,cEE)
+return r
+}
+e_[x[11]]={f:m11,j:[],i:[],ti:[],ic:[]}
 if(path&&e_[path]){
 window.__wxml_comp_version__=0.02
 return function(env,dd,global){$gwxc=0;var root={"tag":"wx-page"};root.children=[]
@@ -1774,11 +1876,17 @@ __wxAppCode__['app.wxml']=$gwx('./app.wxml');
 __wxAppCode__['components/chart/bar/bar.wxss']=setCssToHead([".",[1],"qiun-charts { width: ",[0,750],"; height: ",[0,500],"; background-color: #FFFFFF; }\n.",[1],"charts { width: ",[0,750],"; height: ",[0,500],"; background-color: #FFFFFF; }\n",],undefined,{path:"./components/chart/bar/bar.wxss"});    
 __wxAppCode__['components/chart/bar/bar.wxml']=$gwx('./components/chart/bar/bar.wxml');
 
-__wxAppCode__['components/chart/line.wxss']=setCssToHead([".",[1],"qiun-charts { width: 100%; height: ",[0,500],"; background-color: #FFFFFF; }\n.",[1],"charts { width: ",[0,750],"; height: ",[0,500],"; background-color: #FFFFFF; }\n",],undefined,{path:"./components/chart/line.wxss"});    
+__wxAppCode__['components/chart/line.wxss']=setCssToHead([".",[1],"qiun-charts { width: ",[0,750],"; height: ",[0,500],"; background-color: #FFFFFF; }\n.",[1],"charts { width: ",[0,750],"; height: ",[0,500],"; background-color: #FFFFFF; }\n",],undefined,{path:"./components/chart/line.wxss"});    
 __wxAppCode__['components/chart/line.wxml']=$gwx('./components/chart/line.wxml');
 
-__wxAppCode__['components/easy-scroll/easy-scroll.wxss']=setCssToHead([".",[1],"container.",[1],"data-v-bb83a7be { display: -webkit-box; display: -webkit-flex; display: flex; height: calc(100vh - var(--window-top)); }\n.",[1],"container .",[1],"nav-list.",[1],"data-v-bb83a7be { width: ",[0,160],"; border-right: ",[0,2]," solid #efefef; overflow-y: auto; overflow-x: hidden; display: -webkit-box; display: -webkit-flex; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; flex-direction: column; -webkit-box-align: center; -webkit-align-items: center; align-items: center; font-size: ",[0,34],"; }\n.",[1],"container .",[1],"nav-list.",[1],"data-v-bb83a7be::-webkit-scrollbar { width: 0; height: 0; background: transparent; }\n.",[1],"container .",[1],"nav-list .",[1],"nav-item.",[1],"data-v-bb83a7be { width: 100%; padding: ",[0,25]," 0; text-align: center; -webkit-transition: -webkit-transform 0.1s linear; transition: -webkit-transform 0.1s linear; transition: transform 0.1s linear; transition: transform 0.1s linear, -webkit-transform 0.1s linear; }\n.",[1],"container .",[1],"nav-list .",[1],"nav-item.",[1],"active.",[1],"data-v-bb83a7be { color: #fb7d34; -webkit-transform-origin: center center; transform-origin: center center; -webkit-transform: scale(1.32); transform: scale(1.32); }\n.",[1],"container .",[1],"list-wrapper.",[1],"data-v-bb83a7be { -webkit-box-flex: 1; -webkit-flex: 1; flex: 1; position: relative; }\n.",[1],"container .",[1],"list-wrapper .",[1],"list-container.",[1],"data-v-bb83a7be { position: absolute; top: 0; left: 0; right: 0; bottom: 0; padding: 0 ",[0,32],"; box-sizing: border-box; }\n.",[1],"container .",[1],"list-wrapper .",[1],"list-container .",[1],"title.",[1],"data-v-bb83a7be { height: ",[0,132],"; line-height: ",[0,132],"; text-align: center; }\n.",[1],"container .",[1],"list-wrapper .",[1],"list-container .",[1],"item-container.",[1],"data-v-bb83a7be { display: -webkit-box; display: -webkit-flex; display: flex; -webkit-flex-wrap: wrap; flex-wrap: wrap; -webkit-box-align: center; -webkit-align-items: center; align-items: center; }\n.",[1],"container .",[1],"list-wrapper .",[1],"list-container .",[1],"item-container .",[1],"item.",[1],"data-v-bb83a7be { width: 33.33%; text-align: center; padding-top: ",[0,21],"; padding-bottom: ",[0,31],"; }\n.",[1],"container .",[1],"list-wrapper .",[1],"list-container .",[1],"item-container .",[1],"item wx-image.",[1],"data-v-bb83a7be { width: ",[0,104],"; height: ",[0,104],"; margin-bottom: ",[0,28],"; }\n.",[1],"container .",[1],"list-wrapper .",[1],"list-container .",[1],"item-container .",[1],"item .",[1],"name.",[1],"data-v-bb83a7be { font-size: ",[0,23],"; color: rgba(0,0,0,0.541); }\n",],undefined,{path:"./components/easy-scroll/easy-scroll.wxss"});    
+__wxAppCode__['components/easy-scroll/easy-scroll.wxss']=setCssToHead([".",[1],"container.",[1],"data-v-76a973e3 { display: -webkit-box; display: -webkit-flex; display: flex; height: calc(100vh - var(--window-top)); }\n.",[1],"container .",[1],"nav-list.",[1],"data-v-76a973e3 { width: ",[0,160],"; border-right: ",[0,2]," solid #efefef; overflow-y: auto; overflow-x: hidden; display: -webkit-box; display: -webkit-flex; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; flex-direction: column; -webkit-box-align: center; -webkit-align-items: center; align-items: center; font-size: ",[0,34],"; }\n.",[1],"container .",[1],"nav-list.",[1],"data-v-76a973e3::-webkit-scrollbar { width: 0; height: 0; background: transparent; }\n.",[1],"container .",[1],"nav-list .",[1],"nav-item.",[1],"data-v-76a973e3 { width: 100%; padding: ",[0,25]," 0; text-align: center; -webkit-transition: -webkit-transform 0.1s linear; transition: -webkit-transform 0.1s linear; transition: transform 0.1s linear; transition: transform 0.1s linear, -webkit-transform 0.1s linear; }\n.",[1],"container .",[1],"nav-list .",[1],"nav-item.",[1],"active.",[1],"data-v-76a973e3 { color: #fb7d34; -webkit-transform-origin: center center; transform-origin: center center; -webkit-transform: scale(1.32); transform: scale(1.32); }\n.",[1],"container .",[1],"list-wrapper.",[1],"data-v-76a973e3 { -webkit-box-flex: 1; -webkit-flex: 1; flex: 1; position: relative; }\n.",[1],"container .",[1],"list-wrapper .",[1],"list-container.",[1],"data-v-76a973e3 { position: absolute; top: 0; left: 0; right: 0; bottom: 0; padding: 0 ",[0,32],"; box-sizing: border-box; }\n.",[1],"container .",[1],"list-wrapper .",[1],"list-container .",[1],"title.",[1],"data-v-76a973e3 { height: ",[0,132],"; line-height: ",[0,132],"; text-align: center; }\n.",[1],"container .",[1],"list-wrapper .",[1],"list-container .",[1],"item-container.",[1],"data-v-76a973e3 { display: -webkit-box; display: -webkit-flex; display: flex; -webkit-flex-wrap: wrap; flex-wrap: wrap; -webkit-box-align: center; -webkit-align-items: center; align-items: center; }\n.",[1],"container .",[1],"list-wrapper .",[1],"list-container .",[1],"item-container .",[1],"item.",[1],"data-v-76a973e3 { width: 33.33%; text-align: center; padding-top: ",[0,21],"; padding-bottom: ",[0,31],"; }\n.",[1],"container .",[1],"list-wrapper .",[1],"list-container .",[1],"item-container .",[1],"item wx-image.",[1],"data-v-76a973e3 { width: ",[0,104],"; height: ",[0,104],"; margin-bottom: ",[0,28],"; }\n.",[1],"container .",[1],"list-wrapper .",[1],"list-container .",[1],"item-container .",[1],"item .",[1],"name.",[1],"data-v-76a973e3 { font-size: ",[0,23],"; color: rgba(0,0,0,0.541); }\n",],undefined,{path:"./components/easy-scroll/easy-scroll.wxss"});    
 __wxAppCode__['components/easy-scroll/easy-scroll.wxml']=$gwx('./components/easy-scroll/easy-scroll.wxml');
+
+__wxAppCode__['components/rattenking-dtpicker/rattenking-dtpicker.wxss']=setCssToHead([".",[1],"rui-picker{ height: 10vw; font-size: 4vw; color: #000; display: -webkit-flex; display: -webkit-box; display: flex; -webkit-box-align: center; -webkit-align-items: center; align-items: center; padding: 0 10px; box-sizing: border-box; border: 1px solid #aaa; border-radius: 3px; }\n",],undefined,{path:"./components/rattenking-dtpicker/rattenking-dtpicker.wxss"});    
+__wxAppCode__['components/rattenking-dtpicker/rattenking-dtpicker.wxml']=$gwx('./components/rattenking-dtpicker/rattenking-dtpicker.wxml');
+
+__wxAppCode__['components/uni-countdown/uni-countdown.wxss']=setCssToHead(["@charset \x22UTF-8\x22;\n.",[1],"uni-countdown.",[1],"data-v-307380d8 { display: -webkit-box; display: -webkit-flex; display: flex; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -webkit-flex-direction: row; flex-direction: row; -webkit-box-pack: start; -webkit-justify-content: flex-start; justify-content: flex-start; padding: ",[0,2]," 0; }\n.",[1],"uni-countdown__splitor.",[1],"data-v-307380d8 { display: -webkit-box; display: -webkit-flex; display: flex; -webkit-box-pack: center; -webkit-justify-content: center; justify-content: center; line-height: ",[0,48],"; padding: ",[0,5],"; font-size: ",[0,24],"; }\n.",[1],"uni-countdown__number.",[1],"data-v-307380d8 { display: -webkit-box; display: -webkit-flex; display: flex; -webkit-box-pack: center; -webkit-justify-content: center; justify-content: center; -webkit-box-align: center; -webkit-align-items: center; align-items: center; width: ",[0,52],"; height: ",[0,48],"; line-height: ",[0,48],"; margin: ",[0,5],"; text-align: center; font-size: ",[0,24],"; }\n",],undefined,{path:"./components/uni-countdown/uni-countdown.wxss"});    
+__wxAppCode__['components/uni-countdown/uni-countdown.wxml']=$gwx('./components/uni-countdown/uni-countdown.wxml');
 
 __wxAppCode__['components/uni-segmented-control/uni-segmented-control.wxss']=setCssToHead(["@charset \x22UTF-8\x22;\n.",[1],"segmented-control.",[1],"data-v-7bf69b80 { display: -webkit-box; display: -webkit-flex; display: flex; box-sizing: border-box; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -webkit-flex-direction: row; flex-direction: row; height: 36px; overflow: hidden; }\n.",[1],"segmented-control__item.",[1],"data-v-7bf69b80 { display: -webkit-inline-box; display: -webkit-inline-flex; display: inline-flex; box-sizing: border-box; position: relative; -webkit-box-flex: 1; -webkit-flex: 1; flex: 1; -webkit-box-pack: center; -webkit-justify-content: center; justify-content: center; -webkit-box-align: center; -webkit-align-items: center; align-items: center; }\n.",[1],"segmented-control__item--button.",[1],"data-v-7bf69b80 { border-style: solid; border-top-width: 1px; border-bottom-width: 1px; border-right-width: 1px; border-left-width: 0; }\n.",[1],"segmented-control__item--button--first.",[1],"data-v-7bf69b80 { border-left-width: 1px; border-top-left-radius: 5px; border-bottom-left-radius: 5px; }\n.",[1],"segmented-control__item--button--last.",[1],"data-v-7bf69b80 { border-top-right-radius: 5px; border-bottom-right-radius: 5px; }\n.",[1],"segmented-control__item--text.",[1],"data-v-7bf69b80 { border-bottom-style: solid; border-bottom-width: 3px; }\n.",[1],"segmented-control__text.",[1],"data-v-7bf69b80 { font-size: 16px; line-height: 20px; text-align: center; }\n",],undefined,{path:"./components/uni-segmented-control/uni-segmented-control.wxss"});    
 __wxAppCode__['components/uni-segmented-control/uni-segmented-control.wxml']=$gwx('./components/uni-segmented-control/uni-segmented-control.wxml');
@@ -1795,7 +1903,7 @@ __wxAppCode__['pages/index/index.wxml']=$gwx('./pages/index/index.wxml');
 __wxAppCode__['pages/order/order.wxss']=setCssToHead(["body{background: #ededed;}\n",],undefined,{path:"./pages/order/order.wxss"});    
 __wxAppCode__['pages/order/order.wxml']=$gwx('./pages/order/order.wxml');
 
-__wxAppCode__['pages/sensor/sensor.wxss']=setCssToHead([".",[1],"qiun-charts { width: ",[0,750],"; height: ",[0,500],"; background-color: #FFFFFF; }\n.",[1],"charts { width: ",[0,750],"; height: ",[0,500],"; background-color: #FFFFFF; }\n@charset \x22UTF-8\x22;\n.",[1],"sensor { background: #f4f8f9; }\n.",[1],"sensor .",[1],"list { height: ",[0,600],"; background-color: #557cc3; display: -webkit-box; display: -webkit-flex; display: flex; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -webkit-flex-flow: row wrap; flex-flow: row wrap; -webkit-box-pack: center; -webkit-justify-content: center; justify-content: center; -webkit-box-align: start; -webkit-align-items: flex-start; align-items: flex-start; }\n.",[1],"sensor .",[1],"list .",[1],"list_b { display: -webkit-box; display: -webkit-flex; display: flex; color: #fff; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -webkit-flex-flow: row wrap; flex-flow: row wrap; -webkit-box-pack: center; -webkit-justify-content: center; justify-content: center; -webkit-box-align: start; -webkit-align-items: flex-start; align-items: flex-start; height: ",[0,230],"; width: 100%; }\n.",[1],"sensor .",[1],"list .",[1],"list_b .",[1],"list_b_t { display: -webkit-box; display: -webkit-flex; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-flow: column nowrap; flex-flow: column nowrap; -webkit-box-pack: justify; -webkit-justify-content: space-between; justify-content: space-between; width: 40%; text-align: center; height: ",[0,200],"; }\n.",[1],"sensor .",[1],"list .",[1],"list_b .",[1],"list_b_t .",[1],"num { font-size: ",[0,80],"; }\n.",[1],"sensor .",[1],"allChart { margin: ",[0,30]," 9px 0 ",[0,30],"; }\n.",[1],"sensor .",[1],"allChart .",[1],"lineA { display: -webkit-box; display: -webkit-flex; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-flow: column nowrap; flex-flow: column nowrap; -webkit-box-pack: center; -webkit-justify-content: center; justify-content: center; -webkit-box-align: center; -webkit-align-items: center; align-items: center; }\n",],undefined,{path:"./pages/sensor/sensor.wxss"});    
+__wxAppCode__['pages/sensor/sensor.wxss']=setCssToHead([".",[1],"qiun-charts { width: ",[0,750],"; height: ",[0,500],"; background-color: #FFFFFF; }\n.",[1],"charts { width: ",[0,750],"; height: ",[0,500],"; background-color: #FFFFFF; }\n@charset \x22UTF-8\x22;\n.",[1],"sensor { background: #f4f8f9; }\n.",[1],"sensor .",[1],"list { height: ",[0,600],"; background-color: #557cc3; display: -webkit-box; display: -webkit-flex; display: flex; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -webkit-flex-flow: row wrap; flex-flow: row wrap; -webkit-box-pack: center; -webkit-justify-content: center; justify-content: center; -webkit-box-align: start; -webkit-align-items: flex-start; align-items: flex-start; }\n.",[1],"sensor .",[1],"list .",[1],"list_b { display: -webkit-box; display: -webkit-flex; display: flex; color: #fff; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -webkit-flex-flow: row wrap; flex-flow: row wrap; -webkit-box-pack: center; -webkit-justify-content: center; justify-content: center; -webkit-box-align: start; -webkit-align-items: flex-start; align-items: flex-start; height: ",[0,230],"; width: 100%; }\n.",[1],"sensor .",[1],"list .",[1],"list_b .",[1],"list_b_t { display: -webkit-box; display: -webkit-flex; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-flow: column nowrap; flex-flow: column nowrap; -webkit-box-pack: justify; -webkit-justify-content: space-between; justify-content: space-between; width: 40%; text-align: center; height: ",[0,200],"; }\n.",[1],"sensor .",[1],"list .",[1],"list_b .",[1],"list_b_t .",[1],"num { font-size: ",[0,80],"; }\n.",[1],"sensor .",[1],"times { display: -webkit-box; display: -webkit-flex; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-flow: column nowrap; flex-flow: column nowrap; -webkit-box-pack: justify; -webkit-justify-content: space-between; justify-content: space-between; -webkit-box-align: center; -webkit-align-items: center; align-items: center; }\n.",[1],"sensor .",[1],"times .",[1],"times_s { display: -webkit-box; display: -webkit-flex; display: flex; margin: ",[0,13]," 0; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -webkit-flex-flow: row nowrap; flex-flow: row nowrap; -webkit-box-pack: center; -webkit-justify-content: center; justify-content: center; -webkit-box-align: center; -webkit-align-items: center; align-items: center; }\n.",[1],"sensor .",[1],"allChart { margin: ",[0,30]," 9px 0 ",[0,30],"; }\n.",[1],"sensor .",[1],"allChart .",[1],"lineA { display: -webkit-box; display: -webkit-flex; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-flow: column nowrap; flex-flow: column nowrap; -webkit-box-pack: center; -webkit-justify-content: center; justify-content: center; -webkit-box-align: center; -webkit-align-items: center; align-items: center; }\n",],undefined,{path:"./pages/sensor/sensor.wxss"});    
 __wxAppCode__['pages/sensor/sensor.wxml']=$gwx('./pages/sensor/sensor.wxml');
 
 __wxAppCode__['pages/user/user.wxss']=setCssToHead(["body { background: #ededed; }\n.",[1],"header{background: #1de1d3;padding: ",[0,15]," ",[0,20]," ",[0,255],"; position: relative;}\n.",[1],"headerb{ position: absolute;left: 0; top: ",[0,209],"; width: 100%; box-sizing: border-box;padding: 0 ",[0,20],";}\n.",[1],"headerb .",[1],"notice{ width: ",[0,710],"; box-shadow: 0 ",[0,10]," 10px rgba(0,0,0,0.3); border-radius: ",[0,40],"; position: relative;z-index: 10; background-color: #fff; }\n.",[1],"listm1{ background: #fff; border-radius: ",[0,30],"; box-shadow: 0 0 10px rgba(0,0,0,0.3); margin-bottom: ",[0,20],";padding: ",[0,30],"; }\n.",[1],"listmr1{ width: 100%; display: -webkit-box; display: -webkit-flex; display: flex; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -webkit-flex-flow: row nowrap; flex-flow: row nowrap; -webkit-box-pack: justify; -webkit-justify-content: space-between; justify-content: space-between; -webkit-box-align: center; -webkit-align-items: center; align-items: center; }\n",],undefined,{path:"./pages/user/user.wxss"});    

@@ -7,38 +7,17 @@
 			</view>
 			<view class="list_b">
 				<view class="list_b_t">
-					<text class="num">40℃</text>
+					<text class="num">{{currentData.wendu}}℃</text>
 					<text class="unit">温度</text>
 				</view>
 				<view class="list_b_t">
-					<text class="num">50%</text>
+					<text class="num">{{this.util.numFormat(currentData.shidu*100)}}%</text>
 					<text class="unit">湿度</text>
 				</view>
 				
 			</view>
 		</view>
-		<view class="times">
-			<view class="times_s">
-				<text>开始时间：</text>
-				<ruiDatePicker
-				    fields="second"
-					 start="2010-00-00 00:00:00"
-					    end="2030-12-30 23:59:59"
-					:value="value"
-				    @change="bindChange1"
-				    @cancel="bindCancel"
-				></ruiDatePicker>
-			</view>
-			<view class="times_s">
-				<text>结束时间：</text>
-				<ruiDatePicker
-					fields="second"
-					:value="value"
-					@change="bindChange2"
-					@cancel="bindCancel"
-				></ruiDatePicker>
-			</view>
-		</view>
+
 		<view class="allChart">
 			
 			    <view class="lineA">
@@ -47,17 +26,37 @@
 						<uni-segmented-control  :current="current" :values="items" @clickItem="onClickItem" style-type="button" style="width: 80%;margin-bottom: 30upx;" active-color="#2b61ea"></uni-segmented-control>
 			        <view >
 			            <view v-if="current === 0">
-			                <lineChart :dataAll='dataAll' :endDate="endDate"></lineChart>
+							<uni-countdown  :show-day="false"  @timeup="getServerData" :second="stateNum"></uni-countdown>
+			                <lineChart v-if="showLine" :XYdata="XYdata"  :dataAll='dataAll' ></lineChart>
 							<!-- <barChart ></barChart> -->
 			            </view>
 			            <view v-if="current === 1">
-			                <lineChart></lineChart>
+							<view class="times">
+										<view class="times_s">
+											<text>开始时间：</text>
+											<ruiDatePicker
+											    fields="second"
+												 start="2010-00-00 00:00:00"
+												 end="2030-12-30 23:59:59"
+												:value="dataAll.startDate"
+											    @change="bindChange1"
+											    @cancel="bindCancel"
+											></ruiDatePicker>
+										</view>
+										<view class="times_s">
+											<text>结束时间：</text>
+											<ruiDatePicker
+												fields="second"
+												:value="dataAll.endDate"
+												@change="bindChange2"
+												@cancel="bindCancel"
+											></ruiDatePicker>
+										</view>
+									</view>
+			                <lineChart  v-if="showLine" :XYdata="XYdata1"  :dataAll='dataAll'></lineChart>
 							<!-- <barChart ></barChart> -->
 			            </view>
-			            <view v-if="current === 2">
-			                <lineChart ></lineChart>
-							<!-- <barChart ></barChart> -->
-			            </view>
+
 			        </view>
 			    </view>
 		</view>
@@ -70,37 +69,97 @@
 	import barChart from '../../components/chart/bar/bar.vue'
 	import uniSegmentedControl from "@/components/uni-segmented-control/uni-segmented-control.vue"
 	import ruiDatePicker from '@/components/rattenking-dtpicker/rattenking-dtpicker.vue';
+	import uniCountdown from '@/components/uni-countdown/uni-countdown.vue'
 	export default {
 		data() {
 			return {
-				   items: ['分钟','小时','天'],
+				initArr:[],
+				stateNum:6,
+				currentData:{},
+				showLine:false,
+				XYdata:{categories:[],series:[{name:'温度（℃）',data:[]},{name:"湿度（%）",data:[]}]},
+				XYdata1:{categories:[],series:[{name:'温度（℃）',data:[]},{name:"湿度（%）",data:[]}]},
+				
+				   items: ['实时数据','历史数据'],
 				            current: 0,
-						 dataAll:{startDate:'',endDate:''}
+						 dataAll:{startDate:'2019-01-01 00:00:00',endDate:this.$moment().format("YYYY-MM-DD HH:mm:ss")}
 			};
 		},
 		mounted() {
 			this.init()
 		},
+		
+		watch:{
+			current(v){
+				if(v){
+					this.history()
+				}else{
+					this.realTime();
+				}
+			}
+		},
 		    methods: {
+				handleWay(data){
+					let LineA={categories:[],series:[{name:'温度（℃）',data:[]},{name:"湿度（%）",data:[]}]};
+					for(let v of data){
+						let wendu=Number(v.wendu);
+						let shidu=Number(v.shidu*100).toFixed(2)
+						LineA.categories.push(v.date);
+						LineA.series[0].data.push(wendu.toFixed(2));
+						LineA.series[1].data.push(shidu);
+					}
+					return LineA
+				},
+				getServerData(){
+					this.realTime()
+				},
 		        onClickItem(e,index) {
 		            if (this.current !== e.currentIndex) {
 		                this.current = e.currentIndex;
 		            }
 		        },
 				bindChange1(v){
-					this.dataAll.startDate=v
+					this.dataAll.startDate=v;
+					this.history()
 				},
 				bindChange2(v){
-					this.dataAll.endDate=v
+					this.dataAll.endDate=v;
+					this.history()
 				},
+
+			async realTime(){
+					let list=await this.$api.moniterList({startDate:this.$moment().subtract(6, 's').format("YYYY-MM-DD HH:mm:ss"),endDate:this.$moment().format("YYYY-MM-DD HH:mm:ss")});
+					if(list.message.data.length>0){
+						this.currentData=list.message.data[list.message.data.length-1];
+						let newArr=this.initArr.concat(list.message.data)
+						let LineA=this.handleWay(newArr);
+						this.XYdata=LineA;
+					}
+				},
+				async history(){
+						let list=await this.$api.historyList({startDate:this.dataAll.startDate,endDate:this.dataAll.endDate});
+						let LineA=this.handleWay(list.message.data);
+						this.XYdata1=LineA;
+					},
+				
 			async init(){
-					
+					let [list,res]=await Promise.all([
+						this.$api.moniterList({startDate:this.$moment().subtract(10, 'm').format("YYYY-MM-DD HH:mm:ss"),endDate:this.$moment().format("YYYY-MM-DD HH:mm:ss")})
+					]);
+					this.initArr=this.util.clone(list.message.data);
+					this.currentData=list.message.data[list.message.data.length-1];
+					console.log(this.currentData)
+					let LineA=this.handleWay(list.message.data);
+					// this.XYdata1=LineA;
+					this.XYdata=this.util.clone(LineA);
+					this.showLine=true;
 				}
 		},
 		components: {
 			lineChart,uniSegmentedControl,
 			barChart,
-			ruiDatePicker
+			ruiDatePicker,
+			uniCountdown
 		},
 	}
 </script>
@@ -141,10 +200,9 @@
 		flex-flow: column nowrap;
 		justify-content: space-between;
 		align-items: center;
-		margin-top: 13upx;
 		.times_s{
 			display: flex;
-			margin-top: 13upx;
+			margin: 13upx 0;
 			flex-flow: row nowrap;
 			justify-content: center;
 			align-items: center;

@@ -1,6 +1,6 @@
 <template>
 	<view class="uni-countdown">
-		<text v-if="showDay" :style="{ borderColor: borderColor, color: color, backgroundColor: backgroundColor }" class="uni-countdown__number">{{ d }}</text>
+		<!-- <text v-if="showDay" :style="{ borderColor: borderColor, color: color, backgroundColor: backgroundColor }" class="uni-countdown__number">{{ d }}</text> -->
 		<!-- <text v-if="showDay" :style="{ color: splitorColor }" class="uni-countdown__splitor">天</text> -->
 <!-- 		<text :style="{ borderColor: borderColor, color: color, backgroundColor: backgroundColor }" class="uni-countdown__number">{{ h }}</text>
 		<text :style="{ color: splitorColor }" class="uni-countdown__splitor">{{ showColon ? ':' : '时' }}</text> -->
@@ -92,21 +92,22 @@
 				return day * 60 * 60 * 24 + hours * 60 * 60 + minutes * 60 + seconds
 			},
 			timeUp() {
-				clearInterval(this.timer)
+				clearInterval(this.timer);
 				this.changeFlag()
 				this.$emit('timeup',true)
 			},
 			countDown() {
 				let seconds = this.seconds
 				let [day, hour, minute, second] = [0, 0, 0, 0]
-				if (seconds > 0) {
+				// if (seconds > 0) {
 					day = Math.floor(seconds / (60 * 60 * 24))
 					hour = Math.floor(seconds / (60 * 60)) - (day * 24)
 					minute = Math.floor(seconds / 60) - (day * 24 * 60) - (hour * 60)
 					second = Math.floor(seconds) - (day * 24 * 60 * 60) - (hour * 60 * 60) - (minute * 60)
-				} else {
-					this.timeUp()
-				}
+				// }
+				//  else {
+				// 	this.timeUp()
+				// }
 				if (day < 10) {
 					day = '0' + day
 				}
@@ -122,7 +123,7 @@
 				this.d = day
 				this.h = hour
 				this.i = minute
-				this.s = second
+				this.s = second;
 			},
 			startData() {
 				this.seconds = this.toSeconds(this.day, this.hour, this.minute, this.second)
@@ -140,11 +141,13 @@
 				}, 1000)
 			},
 			changeFlag() {
-				if (!this.syncFlag) {
-					this.seconds = this.toSeconds(this.day, this.hour, this.minute, this.second)
+				// console.log(this.syncFlag)
+				// if (!this.syncFlag) {
+					
+					this.seconds = this.toSeconds(this.day, this.hour, this.minute, this.second);
 					this.startData();
 					this.syncFlag = true;
-				}
+				// }
 			}
 		}
 	}

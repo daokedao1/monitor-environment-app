@@ -4,7 +4,9 @@
   "navigationBarTitleText": "传感器",
   "usingComponents": {
     "uni-segmented-control": "/components/uni-segmented-control/uni-segmented-control",
+    "uni-countdown": "/components/uni-countdown/uni-countdown",
     "line-chart": "/components/chart/line",
-    "bar-chart": "/components/chart/bar/bar"
+    "bar-chart": "/components/chart/bar/bar",
+    "rui-date-picker": "/components/rattenking-dtpicker/rattenking-dtpicker"
   }
 }

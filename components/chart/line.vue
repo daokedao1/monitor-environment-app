@@ -1,6 +1,5 @@
 <template>
 	<view class="qiun-columns">
-<uni-countdown  :show-day="false" @timeup="getServerData" :second="stateNum"></uni-countdown>
 		<view class="qiun-charts" >
 			<!--#ifdef MP-ALIPAY -->
 			<canvas canvas-id="canvasLineA" id="canvasLineA" class="charts" :width="cWidth*pixelRatio" :height="cHeight*pixelRatio" :style="{'width':cWidth+'px','height':cHeight+'px'}" disable-scroll=true @touchstart="touchLineA" @touchmove="moveLineA" @touchend="touchEndLineA"></canvas>
@@ -17,17 +16,15 @@
 <script>
 	import uCharts from '@/components/u-charts/u-charts.js';
 	import  { isJSON } from '@/common/checker.js';
-	import uniCountdown from '@/components/uni-countdown/uni-countdown.vue'
 	var _self;
 	var canvaLineA=null;
-   
 	export default {
 		props: {
 			dataAll: {
 				type: Object,
 			},
-			endDate: {
-				type: String,
+			XYdata: {
+				type: Object,
 			},
 
 		},
@@ -54,15 +51,13 @@
 								},
 			}
 		},
-		components: {uniCountdown},
+		components: {},
 		mounted() {
 			_self = this;
 			//#ifdef MP-ALIPAY
 			uni.getSystemInfo({
 				success: function (res) {
 					if(res.pixelRatio>1){
-						//正常这里给2就行，如果pixelRatio=3性能会降低一点
-						//_self.pixelRatio =res.pixelRatio;
 						_self.pixelRatio =2;
 					}
 				}
@@ -70,45 +65,33 @@
 			//#endif
 			this.cWidth=uni.upx2px(750);
 			this.cHeight=uni.upx2px(500);
-			this.getServerData(true);
-			// const timer=setInterval(()=>{
-			// 	clearInterval(timer)
-			// 	this.getServerData();
-			// },10000)
+			this.getServerData(true,this.XYdata);
 		},
 		watch:{
 			dataAll:{
 				     handler(v){
-				                  this.getServerData()  
-									console.log(123)
+				                  // this.getServerData(false)  
 				           },
+				deep:true
+			},
+			XYdata:{
+				handler(v){
+					this.getServerData(false,v);
+				},
 				deep:true
 			}
 		},
+
 		methods: {
-		async	getServerData(state){
-				
-					let list=await this.$api.moniterList(this.dataAll);
-					let LineA=this.handleWay(list.message.data)
-					console.log(LineA)
-					// //这里我后台返123回的是数组，所以用等于，如果您后台返回的是单条数据，需要push进去
-					// LineA.categories=this.LineA.categories;
-					// LineA.series=this.LineA.series;
-					// _self.textarea = JSON.stringify(this.LineA);
-					console.log(LineA)
-					_self.showLineA("canvasLineA",LineA);
-			
+			getServerData(state,data){
+					if(state){
+						_self.showLineA("canvasLineA",data);
+					}else{
+						console.log(data)
+						this.changeData(data)
+					}
 			},
-			handleWay(data){
-				console.log(data)
-				let LineA={categories:[],series:[{name:'温度（℃）',data:[]},{name:"湿度（%）",data:[]}]};
-				for(let v of data){
-					LineA.categories.push(v.date);
-					LineA.series[0].data.push(v.wendu)
-					LineA.series[1].data.push(v.shidu*100)
-				}
-				return LineA
-			},
+
 			showLineA(canvasId,chartData){
 				canvaLineA=new uCharts({
 					$this:_self,
@@ -136,8 +119,9 @@
 						type:'grid',
 						gridType:'dash',
 						itemCount:2,
+						// scrollBackgroundColor:'red',
+						scrollAlign:"right",
 						scrollShow:true,
-						scrollAlign:'left'
 					},
 					yAxis: {
 						//disabled:true
@@ -173,21 +157,14 @@
 					}
 				});
 			},
-			changeData(){
-				if(isJSON(_self.textarea)){
-					let newdata=JSON.parse(_self.textarea);
+			changeData(data){
 					canvaLineA.updateData({
-						series: newdata.series,
-						categories: newdata.categories,
+						series: data.series,
+						categories: data.categories,
 						scrollPosition:'right',
 						animation:false
 					});
-				}else{
-					uni.showToast({
-						title:'数据格式错误',
-						image:'../../../static/images/alert-warning.png'
-					})
-				}
+			
 			}
 		}
 	}

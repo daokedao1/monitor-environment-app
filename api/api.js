@@ -8,11 +8,15 @@ const addEquipment = (data) => {
 const moniterList = (data) => {
   return request.get('/api/moniter/list', data);
 };
+//历史数据
+const historyList = (data) => {
+  return request.get('/api/moniter/history/list', data);
+};
 
 export default {
   apis: {
 	addEquipment,
-	moniterList
-
+	moniterList,
+historyList
   }
 }

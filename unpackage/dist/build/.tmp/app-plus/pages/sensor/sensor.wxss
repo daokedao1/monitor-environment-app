@@ -195,7 +195,7 @@
   background: #f4f8f9;
 }
 .sensor .list {
-    height: 600rpx;
+    height: 550rpx;
     background-color: #557cc3;
     display: -webkit-box;
     display: -webkit-flex;

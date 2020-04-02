@@ -11,7 +11,7 @@
 						if(list.length>0){
 							let message = '设备异常报警！位置：'+list[0].alertItem+'内容：'+list[0].breakType;
 							console.log(message)
-							// #ifdef H5
+							
 							uni.showModal({
 								title: '设备异常报警',
 								content: message,
@@ -20,7 +20,7 @@
 								confirmText: '关闭',
 								
 							});
-							// #endif
+							
 							// #ifdef APP-PLUS
 							plus.nativeUI.toast(message);
 							// #endif

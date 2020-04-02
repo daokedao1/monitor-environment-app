@@ -171,7 +171,7 @@
 .sensor{
 	background: #f4f8f9;
 	.list{
-		height: 600upx;
+		height: 550upx;
 		background-color: #557cc3;
 		display: flex;
 		flex-flow: row wrap;

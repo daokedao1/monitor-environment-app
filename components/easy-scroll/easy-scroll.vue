@@ -18,7 +18,7 @@
                 <view class="list" v-for="(item,listIndex) of list" :key="listIndex" :id="'scroll-item-'+listIndex">
                     <view class="title"><text>传感器{{listIndex}}</text></view>
                     <view class="item-container">
-                        <view 				@click="device" class="item" v-for="(item,index) of item.children" :key="index">
+                        <view 	@click="device(item)" class="item" v-for="(item,index) of item.children" :key="index">
                             <image src="../../static/logo1.jpg" mode=""></image>
                             <view class="name">{{item.name}}-{{item.value}}</view>
                         </view>
@@ -72,9 +72,9 @@ export default {
                 this.viewNavIndex = nav
             })
         },
-		device(){
+		device(item){
 			uni.navigateTo({
-				url: '../../pages/sensor/sensor'
+				url: '../../pages/sensor/sensor?id='+item.value
 			});
 		},
         handleListScroll(e){

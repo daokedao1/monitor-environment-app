@@ -10,7 +10,6 @@
 						let list = e.message.data;
 						if(list.length>0){
 							let message = '设备异常报警！位置：'+list[0].alertItem+'内容：'+list[0].breakType;
-							console.log(message)
 							
 							uni.showModal({
 								title: '设备异常报警',
@@ -23,6 +22,8 @@
 							
 							// #ifdef APP-PLUS
 							plus.nativeUI.toast(message);
+							var options = {cover:false};    
+							plus.push.createMessage(message, "报警通知", options);  
 							// #endif
 						}
 					}

@@ -1,0 +1,8 @@
+{
+  "navigationBarBackgroundColor": "#1de1d3",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "添加设备",
+  "usingComponents": {
+    "easy-scroll": "/components/easy-scroll/easy-scroll"
+  }
+}

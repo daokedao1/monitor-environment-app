@@ -1,0 +1,32 @@
+
+page {
+	background: #ededed;
+}
+.header{background: #1de1d3;padding: 15rpx 20rpx 255rpx; position: relative;}
+.headerb{
+	
+	position: absolute;left: 0; top: 209rpx; width: 100%; box-sizing: border-box;padding: 0 20rpx;}
+.headerb .notice{ 
+	width: 710rpx; box-shadow: 0 10rpx 10px rgba(0,0,0,0.3); border-radius: 40rpx; position: relative;z-index: 10;
+	background-color: #fff;
+}
+.listm1{
+	background: #fff; border-radius: 30rpx; box-shadow: 0 0 10px rgba(0,0,0,0.3); margin-bottom: 20rpx;padding: 30rpx;
+}
+.listmr1{
+	width: 100%;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-flow: row nowrap;
+	        flex-flow: row nowrap;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	        justify-content: space-between;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+}
+

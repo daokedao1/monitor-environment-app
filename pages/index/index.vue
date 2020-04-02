@@ -12,7 +12,7 @@
 		<!-- <image src="../../static/img1.png" mode="widthFix"></image> -->
 		<view class="listm1 flex flex-between">
 			<view class="listmr1">
-				<view style="font-weight: bold;" class="col3 f30 elip ">我的设备（3）</view>
+				<view style="font-weight: bold;" class="col3 f30 elip ">我的设备（2）</view>
 				<view style="font-size: 40upx;" class="flow">
 					∨
 				</view>

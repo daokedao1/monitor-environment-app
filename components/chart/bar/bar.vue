@@ -1,16 +1,12 @@
 <template>
 	<view class="qiun-columns">
 		<view class="qiun-charts" >
-			<!--#ifdef MP-ALIPAY -->
-			<!-- <canvas canvas-id="canvasColumn" id="canvasColumn" class="charts" :width="cWidth*pixelRatio" :height="cHeight*pixelRatio" :style="{'width':cWidth+'px','height':cHeight+'px'}" @touchstart="touchColumn"></canvas> -->
-			<!--#endif-->
-			<!--#ifndef MP-ALIPAY -->
+			
 			<canvas canvas-id="canvasColumn" id="canvasColumn" class="charts" @touchstart="touchColumn"></canvas>
-			<!--#endif-->
+			
 		</view>
 	
-		<!-- <button class="qiun-button" @tap="changeData()">更新图表</button> -->
-		<!--#endif-->
+		
 	</view>
 </template>
 

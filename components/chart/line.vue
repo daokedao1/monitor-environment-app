@@ -134,7 +134,6 @@
 								splitNumber:8,
 								min:0,
 								format:(val,a)=>{
-									console.log(val,a)
 									return val.toFixed(0)+'℃'
 									}//如不写此方法，Y轴刻度默认保留两位小数
 							},
@@ -145,7 +144,6 @@
 								max:100,
 								splitNumber:8,
 								format:(val,a)=>{
-									console.log(val,a)
 									return (val).toFixed(0)+'%'
 								}//如不写此方法，Y轴刻度默认保留两位小数
 							}

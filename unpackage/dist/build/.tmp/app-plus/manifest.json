@@ -18,6 +18,7 @@
     "url": ""
   },
   "permissions": {
+    "Push": {},
     "UniNView": {
       "description": "UniNView原生渲染"
     }

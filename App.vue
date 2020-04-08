@@ -34,10 +34,11 @@
 								// #ifdef APP-PLUS
 								plus.nativeUI.toast(message);
 								// #endif
-							}
-						}
-						
-					})
+								}
+								}
+							})
+				
+
 				}
 
 			},6000)

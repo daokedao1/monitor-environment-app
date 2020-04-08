@@ -32,7 +32,9 @@
 								});
 								
 								// #ifdef APP-PLUS
-								plus.nativeUI.toast(message);
+								// plus.nativeUI.toast(message);
+								 var options = {cover:false};    
+								 plus.push.createMessage(message, "报警通知", options);
 								// #endif
 								}
 								}

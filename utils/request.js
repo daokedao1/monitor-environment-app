@@ -24,7 +24,7 @@ caRequest.interceptors.response((response) => {
 
 // 设置默认配置
 caRequest.setConfig((config) => {
-	// config.baseURL = 'http://39.98.215.185:8010' 
+	config.baseURL = 'http://39.98.215.185:8010' 
   return config
 });
 

@@ -16,11 +16,11 @@
                 :show-scrollbar="false"
                 :scroll-with-animation="true">
                 <view class="list" v-for="(item,listIndex) of list" :key="listIndex" :id="'scroll-item-'+listIndex">
-                    <view class="title"><text>传感器{{listIndex}}</text></view>
+                    <view class="title"><text>传感器</text></view>
                     <view class="item-container">
                         <view 	@click="device(item)" class="item" v-for="(item,index) of item.children" :key="index">
                             <image src="../../static/logo1.jpg" mode=""></image>
-                            <view class="name">{{item.name}}-{{item.value}}</view>
+                            <view class="name">{{item.name}}</view>
                         </view>
                     </view>
                 </view>
@@ -154,4 +154,5 @@ export default {
                     .name
                         font-size 23rpx
                         color #0000008a
+						word-wrap:break-word
 </style>

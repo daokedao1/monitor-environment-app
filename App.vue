@@ -1,33 +1,45 @@
 <script>
 	import './global.css'
 	export default {
+		data() {
+			return {
+				current:1,
+				}
+		},
 		onLaunch: function() {
 			console.log('App La1unch')
+			let current=true;
 			setInterval(e=>{
-				
-				this.$api.getAlertList({}).then(e=>{
-					if(e.success){
-						let list = e.message.data;
-						if(list.length>0){
-							let message = '设备异常报警！位置：'+list[0].alertItem+'内容：'+list[0].breakType;
-							console.log(message)
-							
-							uni.showModal({
-								title: '设备异常报警',
-								content: message,
-								showCancel: false,
-								cancelText: '',
-								confirmText: '关闭',
+				if(current){
+					 current=false;
+					this.$api.getAlertList({}).then(e=>{
+						if(e.success){
+							let list = e.message.data;
+							if(list.length>0){
+								let message = '设备异常报警！位置：'+list[0].alertItem+'内容：'+list[0].breakType;
+								console.log(message)
 								
-							});
-							
-							// #ifdef APP-PLUS
-							plus.nativeUI.toast(message);
-							// #endif
+								uni.showModal({
+									title: '设备异常报警',
+									duration: 2000,
+									content: message,
+									showCancel: false,
+									cancelText: '',
+									confirmText: '关闭',
+									success:function(v,d){
+										current=true;
+									}
+								});
+								
+								// #ifdef APP-PLUS
+								plus.nativeUI.toast(message);
+								// #endif
+							}
 						}
-					}
-					
-				})
+						
+					})
+				}
+
 			},6000)
 		},
 		onShow: function() {

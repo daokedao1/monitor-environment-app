@@ -18,6 +18,10 @@
 				type: Boolean,
 				default: true
 			},
+			current: {
+				type: Boolean,
+				default: true
+			},
 			showColon: {
 				type: Boolean,
 				default: true
@@ -79,14 +83,20 @@
 			},
 			second(val) {
 				this.changeFlag()
+			},
+			current(val){
+				if(!val){
+					clearInterval(this.timer);
+				}
 			}
 		},
 		created: function(e) {
 			this.startData();
 		},
 		beforeDestroy() {
-			clearInterval(this.timer)
+			clearInterval(this.timer);
 		},
+
 		methods: {
 			toSeconds(day, hours, minutes, seconds) {
 				return day * 60 * 60 * 24 + hours * 60 * 60 + minutes * 60 + seconds

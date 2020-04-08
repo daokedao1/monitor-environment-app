@@ -19,14 +19,19 @@
 				
 			</view>
 		</view>
+		
+		<uni-countdown v-if="current" style="margin-top: 19upx;"  :show-day="false"  @timeup="getServerData" :second="stateNum"></uni-countdown>
 	</view>
  </view><!--header end-->
  <view class="list">
-
 	<view @click="addDevice(v)" v-for="(v,i) in list" :key="i" class="listm flex flex-between">
 		<view class="listmr">
 			<view class="col3 f30 elip mb15 list_t">
-			<text style="font-weight: bold;">{{v.name}}</text>
+			<text style="font-weight: bold;font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100px;">{{v.name}}</text>
 			<text class="state1">
 			<!-- {{v.state1}} -->
 			在线
@@ -43,7 +48,8 @@
 				</view>
 				<view class="list_b_t">
 					<text></text>
-					<text style="color: #4CD964;">●正常</text>
+					<text v-if="v.humidity<0.001" style="color: #e01616;">●异常</text>
+					<text v-else style="color: #4CD964;">●正常</text>
 				</view>
 			</view>
 		</view>
@@ -55,6 +61,7 @@
 
 <script>
 	// import uniIcons from"@/components/uni-ui/lib/uni-icons/uni-icons.vue"
+	import uniCountdown from '@/components/uni-countdown/uni-countdown.vue'
 	// import uniNoticeBar from "../../components/uni-ui/lib/uni-notice-bar/uni-notice-bar.vue"
 	export default {
 		components:{
@@ -63,6 +70,8 @@
 		},
 		data() {
 			return {
+				stateNum:6,
+				current:true,
 				list: [
 					// {
 					// 	name:"厂区1",
@@ -92,8 +101,14 @@
 		mounted() {
 			this.init();
 		},
+		onShow() {
+			this.current=true;
+		},
 
 		methods: {
+			getServerData(){
+				this.init();
+			},
 			async init(){
 				let [res,res1,res2]=await Promise.all([
 					this.$api.moniterList({id:1,startDate:this.$moment().subtract(10, 'm').format("YYYY-MM-DD HH:mm:ss"),endDate:this.$moment().format("YYYY-MM-DD HH:mm:ss")}),
@@ -115,6 +130,7 @@
 					this.list[1].humidity=shidu1.toFixed(1);
 			 },
 			addDevice(v){
+				this.current=false;
 				uni.navigateTo({
 					url: '/pages/sensor/sensor'+"?id="+v.value
 				});
@@ -152,7 +168,7 @@
 	.noticem{background: #fff;padding:55upx 30upx 15upx; border-radius: 10upx;  box-shadow: 0 0 10px rgba(0,0,0,0.3); margin-top: -45upx;}
 	.noticer{width: 480upx;height: 50upx;}
 	.noticer .swiper-item{white-space: nowrap;text-overflow: ellipsis; overflow: hidden; height: 50upx;line-height: 50upx; font-size: 24upx;}
-	.list{padding:90upx 20upx 20upx ;display: flex;
+	.list{padding:140upx 20upx 20upx ;display: flex;
 	flex-flow: row wrap;
 	justify-content: space-between;
 	}

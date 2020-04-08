@@ -7,8 +7,8 @@
   "id": "__UNI__63B8FE5",
   "name": "智能环境监控",
   "version": {
-    "name": "1.0.0",
-    "code": "100"
+    "name": "1.1.0",
+    "code": 110
   },
   "description": "",
   "launch_path": "__uniappview.html",

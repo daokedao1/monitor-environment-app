@@ -59,6 +59,7 @@
 </script>
 
 <style>
+	@import './common/uni.css';
 	view {
 		font-family: '\5FAE\8F6F\96C5\9ED1';
 		font-size: 30upx;

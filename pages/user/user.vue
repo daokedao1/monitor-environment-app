@@ -4,8 +4,8 @@
 		<view class="headerb">
 			<!-- <image src="../../static/img1.png" mode="widthFix"></image> -->
 			<view class="listm1 flex flex-between">
-				<view class="listmr1">
-					<view style="font-weight: bold;" class="col3 f30 elip ">消息中心</view>
+				<view class="listmr1"  @tap="openAlartListPage">
+					<view style="font-weight: bold;" class="col3 f30 elip ">报警消息中心</view>
 					<view style="font-size: 40upx;" class="flow">
 						>
 					</view>
@@ -28,7 +28,11 @@
 
 		},
 		methods: {
-
+			openAlartListPage(){
+				uni.navigateTo({
+					url:'AlartListPage'
+				})
+			}
 
 
 		}

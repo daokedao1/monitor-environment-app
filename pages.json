@@ -52,6 +52,14 @@
             "path" : "components/chart/bar/bar",
             "style" : {}
         }
+        ,{
+            "path" : "pages/user/AlartListPage",
+            "style" : {
+				"navigationBarTitleText":"报警消息中心",
+				"navigationBarTextStyle":"white",
+				"enablePullDownRefresh":true
+			}
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

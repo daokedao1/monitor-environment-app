@@ -16,11 +16,16 @@ const historyList = (data) => {
 const getAlertList = (data) => {
 	return request.get('/api/alert/list', data);
 };
+//报警查询
+const getAlertPage = (data) => {
+	return request.get('/api/alert/page', data);
+};
 export default {
 	apis: {
 		addEquipment,
 		moniterList,
 		historyList,
-		getAlertList
+		getAlertList,
+		getAlertPage
 	}
 }

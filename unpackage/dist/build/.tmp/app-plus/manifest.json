@@ -7,8 +7,8 @@
   "id": "__UNI__63B8FE5",
   "name": "智能环境监控",
   "version": {
-    "name": "1.2.0",
-    "code": 120
+    "name": "1.3.0",
+    "code": 130
   },
   "description": "",
   "launch_path": "__uniappview.html",
@@ -116,6 +116,7 @@
         }
       }
     },
+    "compilerVersion": 2,
     "allowsInlineMediaPlayback": true,
     "safearea": {
       "background": "#fff",
@@ -124,7 +125,7 @@
       }
     },
     "uni-app": {
-      "compilerVersion": "2.6.5",
+      "compilerVersion": "2.6.11",
       "control": "v8",
       "nvueCompiler": "uni-app",
       "renderer": "auto",

@@ -37,6 +37,36 @@ export default {
     data() {
         return {
             list: [
+				{
+					name:'厂区1',
+					children:[
+						{name:'设备1',id:2},
+						{name:'设备2',id:2},
+						{name:'设备3',id:2}
+						
+					]
+				},
+				{
+					name:'厂区2',
+					children:[
+						{name:'设备1',id:2},
+						{name:'设备2',id:2},
+						{name:'设备3',id:2},
+						{name:'设备4',id:2},
+						{name:'设备5',id:2},
+						{name:'设备6',id:2}
+					]
+				},{
+					name:'厂区3',
+					children:[
+						{name:'设备1',id:1},
+						{name:'设备2',id:1},
+						{name:'设备3',id:1},
+						{name:'设备4',id:1},
+						{name:'设备5',id:1},
+						{name:'设备6',id:1}
+					]
+				}
 			],//列表数据
             isTouchScrollView: false,
             clickedNavIndex: 0,
@@ -74,7 +104,7 @@ export default {
         },
 		device(item){
 			uni.navigateTo({
-				url: '../../pages/sensor/sensor?id='+item.value
+				url: '../../pages/sensor/sensor?id='+item.id
 			});
 		},
         handleListScroll(e){
@@ -132,7 +162,7 @@ export default {
             left 0
             right 0
             bottom 0
-            padding 0 32rpx
+            padding 0 2rpx
             box-sizing border-box
             .title
                 height 132rpx

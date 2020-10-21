@@ -7,7 +7,7 @@
 			</view>
 			<view class="list_b">
 				<view class="list_b_t">
-					<text class="num">{{currentData.wendu}}℃</text>
+					<text class="num">{{currentData.wendu||0}}℃</text>
 					<text class="unit">温度</text>
 				</view>
 				<view class="list_b_t">
@@ -101,7 +101,11 @@
 			}
 		},
 		    methods: {
+				bindCancel(){
+					
+				},
 				handleWay(data){
+					console.log(data)
 					let LineA={categories:[],series:[{name:'温度（℃）',data:[],index:0},{name:"湿度（%）",data:[],index:1}]};
 					for(let v of data){
 						let wendu=Number(v.wendu);
@@ -131,29 +135,68 @@
 				},
 
 			async realTime(){
-					let list=await this.$api.moniterList({id:this.dataAll.id,startDate:this.$moment().subtract(6, 's').format("YYYY-MM-DD HH:mm:ss"),endDate:this.$moment().format("YYYY-MM-DD HH:mm:ss")});
-					if(list.message.data.length>0){
-						this.currentData=list.message.data[list.message.data.length-1];
-						let newArr=this.initArr.concat(list.message.data)
-						let LineA=this.handleWay(newArr);
-						this.XYdata=LineA;
-					}
-				},
-				async history(){
-						let list=await this.$api.historyList({id:this.dataAll.id,startDate:this.dataAll.startDate,endDate:this.dataAll.endDate});
-						let LineA=this.handleWay(list.message.data);
-						this.XYdata1=LineA;
-					},
+					// let list=await this.$api.moniterList({id:this.dataAll.id,startDate:this.$moment().subtract(6, 's').format("YYYY-MM-DD HH:mm:ss"),endDate:this.$moment().format("YYYY-MM-DD HH:mm:ss")});
+					// if(list.message.data.length>0){
+						
+					// 	this.currentData=list.message.data[list.message.data.length-1];
+					// 	let newArr=this.initArr.concat(list.message.data)
+					// 	let LineA=this.handleWay(newArr);
+					// 	this.XYdata=LineA;
+					// }
+					
+						
+				let currentData={
+					wendu:Math.floor(Math.random()*10)+20,
+					shidu:Math.random().toFixed(2),
+					date:this.$moment().format("YYYY-MM-DD HH:mm:ss")
+				}
+				
+				this.currentData = currentData
+				this.initArr.push(currentData)
+				
+				let LineA=this.handleWay(this.initArr);
+				// console.log(LineA)
+				this.XYdata=LineA;
+					
+			},
+			async history(){
+				// let list=await this.$api.historyList({id:this.dataAll.id,startDate:this.dataAll.startDate,endDate:this.dataAll.endDate});
+				let historyData = [
+					
+				]
+				for(let i = 60;i>30;i--){
+					historyData.push({
+						wendu:Math.floor(Math.random()*10)+20,
+						shidu:Math.random().toFixed(2),
+						date:this.$moment().format("YYYY-MM-DD HH:mm:")+i
+					})
+				}
+				
+				let LineA=this.handleWay(historyData);
+				this.XYdata1=LineA;
+			},
 				
 			async init(){
-					let [list,res]=await Promise.all([
-						this.$api.moniterList({id:this.dataAll.id,startDate:this.$moment().subtract(10, 'm').format("YYYY-MM-DD HH:mm:ss"),endDate:this.$moment().format("YYYY-MM-DD HH:mm:ss")})
-					]);
-					this.initArr=this.util.clone(list.message.data);
-					this.currentData=list.message.data[list.message.data.length-1];
-					console.log(this.currentData)
-					let LineA=this.handleWay(list.message.data);
+				
+					// let [list,res]=await Promise.all([
+					// 	this.$api.moniterList({id:this.dataAll.id,startDate:this.$moment().subtract(10, 'm').format("YYYY-MM-DD HH:mm:ss"),endDate:this.$moment().format("YYYY-MM-DD HH:mm:ss")})
+					// ]);
+					// this.initArr=this.util.clone(list.message.data);
+					// this.currentData=list.message.data[list.message.data.length-1];
+					// console.log(this.currentData)
+					// let LineA=this.handleWay(list.message.data);
 					// this.XYdata1=LineA;
+					let currentData={
+						wendu:Math.floor(Math.random()*10)+20,
+						shidu:Math.random().toFixed(2),
+						date:this.$moment().format("YYYY-MM-DD HH:mm:ss")
+					}
+					
+					this.currentData = currentData
+					this.initArr.push(currentData)
+					
+					let LineA=this.handleWay(this.initArr);
+					
 					this.XYdata=this.util.clone(LineA);
 					this.showLine=true;
 				}

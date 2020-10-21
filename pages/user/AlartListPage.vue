@@ -81,22 +81,37 @@ export default {
 					"pageSize": 20
 				}
 			}
-			this.$api.getAlertPage(params).then((res)=>{
-				if(res.success && res.message.data.length !== 0){
+			let newData = []
+			for(let i=0;i<10;i++){
+				newData.push({
+					alertValue:Math.floor(Math.random()*10)+20,
+					date:this.$moment().format("YYYY-MM-DD HH:mm:ss"),
+					type:1,
+					alertItem:'设备'+(i+1),
+					breakType:'传感器1'+(i+1)
+				})
+			}
+			let list = this.setTime(newData)
+			this.listData = this.reload ? list : this.listData.concat(list);
+			this.last_id = list[list.length - 1].id;
+			this.reload = false;
+			uni.stopPullDownRefresh();
+			// this.$api.getAlertPage(params).then((res)=>{
+			// 	if(res.success && res.message.data.length !== 0){
 					
-						let list = this.setTime(res.message.data)
-						console.log(list)
-						this.listData = this.reload ? list : this.listData.concat(list);
-						this.last_id = list[list.length - 1].id;
-						this.reload = false;
+			// 			let list = this.setTime(res.message.data)
+			// 			console.log(list)
+			// 			this.listData = this.reload ? list : this.listData.concat(list);
+			// 			this.last_id = list[list.length - 1].id;
+			// 			this.reload = false;
 					
-					uni.stopPullDownRefresh();
-				}
-				else if(res.message.data.length == 0){
-					this.status = 'noMore'
-					uni.stopPullDownRefresh();
-				}
-			})
+			// 		uni.stopPullDownRefresh();
+			// 	}
+			// 	else if(res.message.data.length == 0){
+			// 		this.status = 'noMore'
+			// 		uni.stopPullDownRefresh();
+			// 	}
+			// })
 		},
 		getTopList(cb){
 			this.$api.getTopNewsList({"type": 1}).then(res=>{

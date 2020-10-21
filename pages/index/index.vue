@@ -12,7 +12,7 @@
 		<!-- <image src="../../static/img1.png" mode="widthFix"></image> -->
 		<view class="listm1 flex flex-between">
 			<view class="listmr1">
-				<view style="font-weight: bold;" class="col3 f30 elip ">我的设备（2）</view>
+				<view style="font-weight: bold;" class="col3 f30 elip ">我的设备（3）</view>
 				<view style="font-size: 40upx;" class="flow">
 					∨
 				</view>
@@ -73,27 +73,27 @@
 				stateNum:6,
 				current:true,
 				list: [
-					// {
-					// 	name:"厂区1",
-					// 	state1:"在线",
-					// 	temperature:'40',
-					// 	humidity:'50',
-					// 	state2:"正常"
-					// },
-					// {
-					// 	name:"厂区2",
-					// 	state1:"在线",
-					// 	temperature:'40',
-					// 	humidity:'50',
-					// 	state2:"正常"
-					// },
-					// {
-					// 	name:"厂区3",
-					// 	state1:"在线",
-					// 	temperature:'40',
-					// 	humidity:'50',
-					// 	state2:"正常"
-					// },
+					{
+						name:"厂区1",
+						state1:"在线",
+						temperature:Math.floor(Math.random()*10)+20,
+						humidity:'50',
+						state2:"正常"
+					},
+					{
+						name:"厂区2",
+						state1:"在线",
+						temperature:'40',
+						humidity:'50',
+						state2:"正常"
+					},
+					{
+						name:"厂区3",
+						state1:"在线",
+						temperature:'40',
+						humidity:'50',
+						state2:"正常"
+					}
 				]
 				
 			}
@@ -110,24 +110,24 @@
 				this.init();
 			},
 			async init(){
-				let [res,res1,res2]=await Promise.all([
-					this.$api.moniterList({id:1,startDate:this.$moment().subtract(10, 'm').format("YYYY-MM-DD HH:mm:ss"),endDate:this.$moment().format("YYYY-MM-DD HH:mm:ss")}),
-					this.$api.moniterList({id:2,startDate:this.$moment().subtract(10, 'm').format("YYYY-MM-DD HH:mm:ss"),endDate:this.$moment().format("YYYY-MM-DD HH:mm:ss")}),
-					this.$api.addEquipment()
-				]);
-					let obj=res.message.data[res.message.data.length-1];
-					let obj1=res1.message.data[res1.message.data.length-1];
-					this.list=res2.message[0].children;
-					//0
-					let wendu=Number(obj.wendu);
-					let shidu=obj.shidu*100;
-					this.list[0].temperature=wendu.toFixed(1);
-					this.list[0].humidity=shidu.toFixed(1);
-					//1
-					let wendu1=Number(obj1.wendu);
-					let shidu1=obj1.shidu*100;
-					this.list[1].temperature=wendu1.toFixed(1);
-					this.list[1].humidity=shidu1.toFixed(1);
+				// let [res,res1,res2]=await Promise.all([
+				// 	this.$api.moniterList({id:1,startDate:this.$moment().subtract(10, 'm').format("YYYY-MM-DD HH:mm:ss"),endDate:this.$moment().format("YYYY-MM-DD HH:mm:ss")}),
+				// 	this.$api.moniterList({id:2,startDate:this.$moment().subtract(10, 'm').format("YYYY-MM-DD HH:mm:ss"),endDate:this.$moment().format("YYYY-MM-DD HH:mm:ss")}),
+				// 	this.$api.addEquipment()
+				// ]);
+				// 	let obj=res.message.data[res.message.data.length-1];
+				// 	let obj1=res1.message.data[res1.message.data.length-1];
+				// 	this.list=res2.message[0].children;
+				// 	//0
+				// 	let wendu=Number(obj.wendu);
+				// 	let shidu=obj.shidu*100;
+				// 	this.list[0].temperature=wendu.toFixed(1);
+				// 	this.list[0].humidity=shidu.toFixed(1);
+				// 	//1
+				// 	let wendu1=Number(obj1.wendu);
+				// 	let shidu1=obj1.shidu*100;
+				// 	this.list[1].temperature=wendu1.toFixed(1);
+				// 	this.list[1].humidity=shidu1.toFixed(1);
 			 },
 			addDevice(v){
 				this.current=false;

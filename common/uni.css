@@ -75,8 +75,8 @@ form {
 	overflow-x: hidden;
 }
 .uni-padding-wrap{
-	width:690upx;
-	padding:0 30upx;
+	width:100%;
+	/* padding:0 30upx; */
 }
 .uni-word {
 	text-align: center;

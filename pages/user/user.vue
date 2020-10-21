@@ -9,8 +9,45 @@
 					<view style="font-size: 40upx;" class="flow">
 						>
 					</view>
-
 				</view>
+				
+			</view>
+			
+			<view class="listm1 flex flex-between">
+				<view class="listmr1"  >
+					<view style="font-weight: bold;" class="col3 f30 elip ">设置</view>
+					<view style="font-size: 40upx;" class="flow">
+						>
+					</view>
+				</view>
+				
+			</view>
+			<view class="listm1 flex flex-between">
+				<view class="listmr1" >
+					<view style="font-weight: bold;" class="col3 f30 elip ">帮助与反馈</view>
+					<view style="font-size: 40upx;" class="flow">
+						>
+					</view>
+				</view>
+				
+			</view>
+			<view class="listm1 flex flex-between">
+				<view class="listmr1" >
+					<view style="font-weight: bold;" class="col3 f30 elip ">用户协议和隐私政策</view>
+					<view style="font-size: 40upx;" class="flow">
+						>
+					</view>
+				</view>
+				
+			</view>
+			<view class="listm1 flex flex-between">
+				<view class="listmr1"  >
+					<view style="font-weight: bold;" class="col3 f30 elip ">关于我们</view>
+					<view style="font-size: 40upx;" class="flow">
+						>
+					</view>
+				</view>
+				
 			</view>
 		</view>
 	</view>

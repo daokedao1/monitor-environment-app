@@ -13,7 +13,7 @@
 			"style": {
 				"navigationBarBackgroundColor":"#557cc3",
 				"navigationBarTextStyle":"white",
-				"navigationBarTitleText":"传感器"
+				"navigationBarTitleText":"实时监控"
 			}
 		},
 		{
@@ -21,7 +21,17 @@
 			"style": {
 				"navigationBarBackgroundColor":"#1de1d3",
 				"navigationBarTextStyle":"white",
-				"navigationBarTitleText":"添加设备"
+				"navigationBarTitleText":"设备",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"text": "添加设备",
+							"fontSize": "14px",
+							"float": "right",
+							"width": "30"
+						}]
+					}
+				}
 			}
 		},
 		{
@@ -58,6 +68,14 @@
 				"navigationBarTitleText":"报警消息中心",
 				"navigationBarTextStyle":"white",
 				"enablePullDownRefresh":true
+			}
+        }
+        ,{
+            "path" : "pages/AddDevice/addequipment",
+            "style" : {
+				"navigationBarBackgroundColor":"#1de1d3",
+				"navigationBarTextStyle":"white",
+				"navigationBarTitleText":"添加设备"
 			}
         }
     ],

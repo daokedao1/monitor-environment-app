@@ -1,13 +1,13 @@
 <template><view class="uni-padding-wrap">
  <view class="header">
- 	<!-- <view class="flex flex-between flex-align-center"> -->
- 		<!-- <text class="colf f25">上海市</text> -->
-	<!-- 	<view class="ssbox"><view class="flex flex-between flex-align-center">
+ 	<view class="flex flex-between flex-align-center">
+ 		<text class="colf f25">五公司</text>
+		<view class="ssbox"><view class="flex flex-between flex-align-center">
 			<input type="text" value="" confirm-type="search" class="ss_input" placeholder="搜索您要的事物" placeholder-style="color:#fff; opacity:0.35" />
 			<uni-icons type="search" size="20" color="#fff"></uni-icons>
-		</view></view>	 -->
-		<!-- <uni-icons type="chat" size="25" color="#fff" style="opacity: 0.85;"></uni-icons> -->
- 	<!-- </view> -->
+		</view></view>	
+		<uni-icons type="chat" size="25" color="#fff" style="opacity: 0.85;"></uni-icons>
+ 	</view>
 	<view class="headerb">
 		<!-- <image src="../../static/img1.png" mode="widthFix"></image> -->
 		<view class="listm1 flex flex-between">
@@ -91,7 +91,7 @@
 						name:"厂区3",
 						state1:"在线",
 						temperature:'40',
-						humidity:'50',
+						humidity:'0',
 						state2:"正常"
 					}
 				]
@@ -143,9 +143,9 @@
 
 <style scoped lang="scss">
 	page{background: #f4f8f9;}
-	.header{background: #1de1d3;padding: 15upx 20upx 255upx; position: relative;}
-	.ssbox{ background: rgba(255,255,255,0.35);  width: 530upx; border-radius: 60rpx;padding: 10upx 15upx; box-sizing: border-box;}
-	.ss_input{border: none;width: 450upx;  font-size: 30upx; color: #fff; background: none; height: 45upx; line-break: 45upx;}
+	.header{background: #1de1d3;padding: 15upx 20upx 180upx; position: relative;}
+	.ssbox{ background: rgba(255,255,255,0.35);  width: 530upx; border-radius: 60rpx;padding: 0upx 15upx; box-sizing: border-box;}
+	.ss_input{border: none;width: 450upx;  font-size: 30upx; color: #fff; background: none; height: 35upx; line-break: 45upx;}
 	.headerb{ 
 		
 		position: absolute;left: 0; top: 209upx; width: 100%; box-sizing: border-box;padding: 0 20upx;}

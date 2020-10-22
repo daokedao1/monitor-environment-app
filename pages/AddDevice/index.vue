@@ -12,9 +12,20 @@
 				
 			};
 		},
+		onNavigationBarButtonTap(e) {
+			this.fresh();
+		},
 		components: {
 			easyScroll
 		},
+		methods: {
+			fresh() {
+		
+				uni.navigateTo({
+					url:'./addequipment'
+				})
+			},
+		}
 	}
 </script>
 

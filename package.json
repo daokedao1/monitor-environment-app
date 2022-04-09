@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/daokedao1/monitor-environment-app#readme",
   "dependencies": {
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
 	"@dcloudio/uni-ui": "^1.1.0"
   }
 }
